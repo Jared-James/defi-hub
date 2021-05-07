@@ -19,7 +19,7 @@ const historyOption = {
 };
 
 const MyChart = ({ info, BTC }) => {
-  const { day } = info;
+
 
 
   const chartRef = useRef();
@@ -27,6 +27,7 @@ const MyChart = ({ info, BTC }) => {
   console.log(info);
 
   useEffect(() => {
+    const { day } = info;
     if (chartRef && chartRef.current) {
       let myChart = new Chart(chartRef.current, {
         type: "line",
