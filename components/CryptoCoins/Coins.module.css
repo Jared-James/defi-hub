@@ -1,13 +1,23 @@
+.red {
+  color: #f00606;
+  grid-area: coin_percent;
+}
+.green {
+  color: #13c783;
+  grid-area: coin_percent;
+}
 
 .coin_row {
-    display: grid;
-    width: 100vw;
-    grid-template-columns: .4fr 1.5fr .6fr 1fr 1fr;
-    gap: .2rem;
-    grid-template-rows: 1fr;
-    grid-template-areas: 
-    "coin_img coin_h1 coin_symbol coin_data coin_price";
-    padding: 1rem 0 1rem 0;
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 0.3fr 1.5fr 0.6fr 1fr 0.9fr;
+  gap: 0.2rem;
+  grid-template-rows: 1fr;
+  grid-template-areas: "coin_img coin_h1 coin_symbol coin_percent coin_price";
+  padding: 1rem 0 1rem 0;
+  font-size: 0.8rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .coin_row:hover {
@@ -16,74 +26,73 @@
 }
 
 .coin_img {
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   margin-right: 1rem;
   margin-left: 1rem;
-  grid-area: 'coin_img';
+  grid-area: coin_img;
 }
 
 .coin {
-  /* display: flex; */
   align-items: center;
   justify-content: center;
 }
 
 .coin_h1 {
-  font-size: 1rem;
-  grid-area: 'coin_h1';
+  grid-area: coin_h1;
+  font-size: 0.8rem;
 }
 
 .coin_symbol {
   text-transform: uppercase;
   margin-right: 1rem;
-  grid-area: 'coin_symbol';
+  grid-area: coin_symbol;
 }
 
-.coin_data {
-  /* display: flex; */
+.coin_percent {
   text-align: center;
   margin-right: 10%;
   margin-right: 1rem;
-  grid-area: 'coin_data';
+  grid-area: coin_percent;
 }
 
 .coin_price {
   margin-right: 1rem;
-  grid-area: 'coin_price';
+  grid-area: coin_price;
 }
 
 .coin_volume {
   display: none;
 }
 
-@media screen and (min-width: 720px) {
-  .coin_volume {
-    display: contents;
-    width: 135px;
-    margin-right: 1rem;
-  }
-}
-
-.coin_marketcap {
+.coin_market {
   display: none;
 }
 
 @media screen and (min-width: 720px) {
-  .coin_marketcap {
-    width: 200px;
-    display: contents;
+  .coin_row {
+    grid-template-columns: 0.3fr 0.4fr 0.4fr 0.4fr 0.4fr 1fr 1fr;
+    grid-template-areas: "coin_img coin_h1 coin_symbol coin_percent coin_price coin_market coin_volume";
+  }
+
+  .coin_volume {
+    display: block;
+    width: 135px;
     margin-right: 1rem;
+    grid-area: coin_volume;
+  }
+
+  .coin_market {
+    display: block;
+    grid-area: coin_market;
   }
 }
 
-.coin_percent {
-  width: 150px;
-}
 
-.red {
-  color: #f00606;
-}
-.green {
-  color: #13c783;
-}
+@media screen and (min-width: 1000px) {
+    .coin_row {
+      grid-template-columns: 1fr 0.3fr 0.4fr 0.4fr 0.4fr 0.4fr .4fr .7fr .7fr;
+      grid-template-areas: ". coin_img coin_h1 coin_symbol coin_percent coin_price coin_market coin_volume .";
+    }
+  
+  }
