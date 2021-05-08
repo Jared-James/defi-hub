@@ -16,6 +16,7 @@ const Layout = ({ children, title = "Crypto Tracker" }) => {
                     <Link href="/" passHref>
                         <a >
                         <img className="logo"  src='/svg-2.svg' />
+
                         </a>
                     </Link>
                 </header>

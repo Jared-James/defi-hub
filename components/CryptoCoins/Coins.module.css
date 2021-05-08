@@ -1,74 +1,89 @@
-.coin_container {
-    display: flex;
-    justify-content: center;
-    
-}
 
 .coin_row {
-    display: flex;
-    grid-gap: 1rem;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    height: 80px;
-    border-bottom: 1px solid #2e2e2e;
-    width: 820px;
-    padding: 0 0 0 0;
-  
+    display: grid;
+    width: 100vw;
+    grid-template-columns: .4fr 1.5fr .6fr 1fr 1fr;
+    gap: .2rem;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "coin_img coin_h1 coin_symbol coin_data coin_price";
+    padding: 1rem 0 1rem 0;
 }
-
 
 .coin_row:hover {
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(253, 253, 255, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-}
-.coin {
-    display: flex;
-    align-items: center;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(253, 253, 255, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
 .coin_img {
-    height: 30px;
-    width: 30px;
-    margin-right: 1rem;
-    margin-left: 1rem;;
+  height: 30px;
+  width: 30px;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  grid-area: 'coin_img';
+}
 
+.coin {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
 }
 
 .coin_h1 {
-    font-size: 1rem;
-    width: 180px;
+  font-size: 1rem;
+  grid-area: 'coin_h1';
 }
 
 .coin_symbol {
-    text-transform: uppercase;
+  text-transform: uppercase;
+  margin-right: 1rem;
+  grid-area: 'coin_symbol';
 }
 
 .coin_data {
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-    width: 100%;
+  /* display: flex; */
+  text-align: center;
+  margin-right: 10%;
+  margin-right: 1rem;
+  grid-area: 'coin_data';
 }
 
 .coin_price {
-    width: 115px;
+  margin-right: 1rem;
+  grid-area: 'coin_price';
 }
 
 .coin_volume {
+  display: none;
+}
+
+@media screen and (min-width: 720px) {
+  .coin_volume {
+    display: contents;
     width: 135px;
+    margin-right: 1rem;
+  }
 }
 
 .coin_marketcap {
-    width: 230px
+  display: none;
+}
+
+@media screen and (min-width: 720px) {
+  .coin_marketcap {
+    width: 200px;
+    display: contents;
+    margin-right: 1rem;
+  }
 }
 
 .coin_percent {
-    width: 150px;
+  width: 150px;
 }
 
 .red {
-    color: #f00606;
+  color: #f00606;
 }
 .green {
-    color: #13c783;
+  color: #13c783;
 }
