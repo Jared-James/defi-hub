@@ -15,9 +15,13 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background-color: #141818;
+    font-size: 1.2rem;
+}
 
-
-    
+@media  screen and (min-width: 800px) { 
+  html, body {
+    font-size: 1.5rem;
+  }
 }
 
 a {
