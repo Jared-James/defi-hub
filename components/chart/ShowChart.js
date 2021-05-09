@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import styles from './coin.module.css'
+import styles from "./coin.module.css";
 
 import Chart from "chart.js/auto";
 
@@ -48,11 +48,17 @@ const ShowChart = ({ info, BTC }) => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.chart_container}>
       <h3 className={styles.title}>Daily price Change</h3>
-     <div className={styles.chart}>
-     <canvas ref={chartRef} className={styles.chart} id="myChart" width={300} height={500}></canvas>
-     </div>
+      <div className={styles.chart}>
+        <canvas
+          ref={chartRef}
+          className={styles.chart}
+          id="myChart"
+          width={300}
+          height={500}
+        ></canvas>
+      </div>
     </div>
   );
 };

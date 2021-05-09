@@ -23,7 +23,10 @@ const Coin = ({ coin }) => {
       <Layout>
         <div className={styles.coin_page}>
           <div className={styles.coin_container}>
-         
+                 {/* Button to go to chart page abd back */}
+                 <button className={styles.button} onClick={handleClick}>
+                  {buttonName}
+                </button>
             {toggle ? (
               <ChartComponent {...coin} />
             ) : (
@@ -41,15 +44,12 @@ const Coin = ({ coin }) => {
                 <p className={styles.coin_current}>
                   ${coin.market_data.current_price.nzd.toLocaleString()} NZD
                 </p>
-         
                 <h3>Last updated: </h3>
                 <p className={styles.last_updated}>
                   {coin.market_data.last_updated}
                 </p>
-                <button className={styles.button} onClick={handleClick}>
-              {buttonName}
-            </button>
-                       {/* ------------- 24h Change---------------*/}
+           
+                {/* ------------- 24h Change---------------*/}
                 <div className={styles.coin_grid}>
                   <div className={styles.coin_information}>
                     <div className={styles.coin_flex}>
