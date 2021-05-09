@@ -23,6 +23,7 @@
 .coin_row:hover {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
     rgba(253, 253, 255, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    filter: brightness(140%);
 }
 
 .coin_img {

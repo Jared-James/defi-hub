@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #8e8d8a;
+}
+
 html,
 body {
   padding: 0;
@@ -12,21 +22,6 @@ a {
   text-decoration: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  color: #8e8d8a;
-}
-
-body {
-
-  /* background-color: #fff; */
-}
-
 .coin_app {
   display: flex;
   flex-direction: column;
@@ -35,6 +30,7 @@ body {
   color: #fff;
   width: 100%;
 }
+
 
 /* Layout CSS */
 .layout {

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Layout from "../../components/layout/Layout";
 import styles from "./Coin.module.css";
-import Bye from "./Bye";
-import Hello from "./Hello";
+import ChartComponent from "../../components/chart/ChartComponent";
 
 const Coin = ({ coin }) => {
   const [toggle, setToggle] = useState(false);
@@ -24,11 +23,9 @@ const Coin = ({ coin }) => {
       <Layout>
         <div className={styles.coin_page}>
           <div className={styles.coin_container}>
-            <button className={styles.button} onClick={handleClick}>
-              {buttonName}
-            </button>
+         
             {toggle ? (
-              <Hello {...coin} />
+              <ChartComponent {...coin} />
             ) : (
               <>
                 {" "}
@@ -44,11 +41,15 @@ const Coin = ({ coin }) => {
                 <p className={styles.coin_current}>
                   ${coin.market_data.current_price.nzd.toLocaleString()} NZD
                 </p>
-                {/* ------------- 24h Change---------------*/}
+         
                 <h3>Last updated: </h3>
                 <p className={styles.last_updated}>
                   {coin.market_data.last_updated}
                 </p>
+                <button className={styles.button} onClick={handleClick}>
+              {buttonName}
+            </button>
+                       {/* ------------- 24h Change---------------*/}
                 <div className={styles.coin_grid}>
                   <div className={styles.coin_information}>
                     <div className={styles.coin_flex}>
@@ -104,13 +105,17 @@ const Coin = ({ coin }) => {
                       {coin.market_data.price_change_percentage_24h < 0 ? (
                         <>
                           {" "}
-                          <p className={styles.percentage_increase, styles.red}>
+                          <p
+                            className={(styles.percentage_increase, styles.red)}
+                          >
                             {coin.market_data.price_change_percentage_24h.toLocaleString()}
                             %
                           </p>
                         </>
                       ) : (
-                        <p className={styles.percentage_increase, styles.green}>
+                        <p
+                          className={(styles.percentage_increase, styles.green)}
+                        >
                           {coin.market_data.price_change_percentage_24h.toLocaleString()}
                           %
                         </p>

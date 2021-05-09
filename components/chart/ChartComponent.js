@@ -1,27 +1,22 @@
 import { useEffect, useState } from "react";
-import MyChart from "./MyChart";
+import ShowChart from "./ShowChart";
 import moment from "moment";
-import 'chartjs-adapter-moment';
-import Loading from './Loading'
+import "chartjs-adapter-moment";
+import Loading from "./Loading";
 
 const Hello = ({ id }) => {
   const [btcId, setId] = useState("");
   const [chart, setChart] = useState();
   const [loading, isLoading] = useState(false);
 
-
-
   const formatData = (data) => {
     return data.map((el) => {
       return {
-         x: moment(el[0]).format("LLL"),
+        x: moment(el[0]).format("LLL"),
         y: el[1],
       };
     });
   };
-
-
-
 
   useEffect(async () => {
     isLoading(true);
@@ -30,12 +25,12 @@ const Hello = ({ id }) => {
     );
     const data = await res.json();
 
-    console.log('data', id)
+    console.log("data", id);
 
     setId(id);
     setChart({
       day: formatData(data.prices),
-      details: data
+      details: data,
     });
 
     isLoading(false);
@@ -43,9 +38,8 @@ const Hello = ({ id }) => {
 
   return (
     <>
-
-    {loading &&  <Loading />}
-      {chart && <MyChart info={chart} BTC={id} />}
+      {loading && <Loading />}
+      {chart && <ShowChart info={chart} BTC={id} />}
     </>
   );
 };

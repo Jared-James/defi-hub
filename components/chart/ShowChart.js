@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import styles from './coin.module.css'
 
 import Chart from "chart.js/auto";
 
@@ -18,13 +19,8 @@ const historyOption = {
   },
 };
 
-const MyChart = ({ info, BTC }) => {
-
-
-
+const ShowChart = ({ info, BTC }) => {
   const chartRef = useRef();
-
-  console.log(info);
 
   useEffect(() => {
     const { day } = info;
@@ -53,10 +49,12 @@ const MyChart = ({ info, BTC }) => {
 
   return (
     <div>
-        <h3 className="title">Daily price Change</h3>
-      <canvas ref={chartRef} id="myChart" width={100} height={78}></canvas>
+      <h3 className={styles.title}>Daily price Change</h3>
+     <div className={styles.chart}>
+     <canvas ref={chartRef} className={styles.chart} id="myChart" width={300} height={500}></canvas>
+     </div>
     </div>
   );
 };
 
-export default MyChart;
+export default ShowChart;
