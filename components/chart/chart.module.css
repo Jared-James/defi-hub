@@ -1,5 +1,5 @@
 .chart_container {
-  height: 600px;
+  height: 1000px;
 }
 
 .loading {
@@ -19,4 +19,23 @@
 .title {
   text-align: center;
   margin-top: 2rem;
+}
+
+
+@media screen and (min-width: 800px) {
+  .title {
+    text-align: center;
+    margin-top: 0rem;
+  }
+
+  .chart_container {
+    height: 600px;
+  }
+
+  .chart {
+    width: 400px;
+    height: 200px;
+    margin-top: 3rem;
+    transform: translateY(-5%);
+  }
 }
