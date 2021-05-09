@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import styles from "./coin.module.css";
+import styles from "./chart.module.css";
 
 import Chart from "chart.js/auto";
 

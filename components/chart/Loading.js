@@ -1,4 +1,4 @@
-import styles from "./Coin.module.css";
+import styles from "./chart.module.css";
 
 const Loading = () => {
   return (
