@@ -65,9 +65,8 @@
 
 .button {
   width: 6rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   height: 2rem;
   border-radius: 2rem;
   background-color: transparent;
@@ -93,6 +92,14 @@
   line-height: 2;
 }
 
+.coin_return {
+  height: 50px;
+  width: 100%;
+  margin-left: 2rem;
+ 
+  cursor: pointer;
+}
+
 @media screen and (min-width: 700px) {
   .coin_container {
     width: 45rem;
@@ -110,12 +117,9 @@
   .coin_image {
     margin-top: 1rem;
   }
-}
 
-.coin_return {
- height: 50px;
-width: 100%;
-margin-left: 4rem;
-transform: translateY(2rem);
-cursor: pointer;
+  .coin_return {
+    margin-left: 4rem;
+    transform: translateY(2rem);
+  }
 }
