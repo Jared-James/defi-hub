@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Layout from "../../components/layout/Layout";
 import styles from "./Coin.module.css";
-import FetchChartComponent from "../../components/chart/FetchChartComponent";
+import FetchChart from "../../components/chart/FetchChart";
 import moment from "moment";
 import Link from "next/link";
 
@@ -9,6 +9,7 @@ const Coin = ({ coin }) => {
   const [toggle, setToggle] = useState(false);
   const [buttonName, setButton] = useState("View Chart");
 
+  // toogles between individual coin information & rendering the chart
   const handleClick = (e) => {
     e.preventDefault();
     setToggle(!toggle);
@@ -20,6 +21,7 @@ const Coin = ({ coin }) => {
     }
   };
 
+  // Moment() for formatting lasted updated
   let time = coin.market_data.last_updated;
   let momentTime = moment(time).format("LLL");
 
@@ -29,30 +31,34 @@ const Coin = ({ coin }) => {
         <div className={styles.coin_page}>
           <div className={styles.coin_container}>
             {toggle ? (
-              <FetchChartComponent {...coin} />
+              <FetchChart {...coin} />
             ) : (
               <>
                 <div className={styles.coin_return}>
                   <Link href="/">
-               
                     <img src="https://img.icons8.com/fluent/50/000000/back.png" />
                   </Link>
                 </div>
+                {/* IMAGE */}
                 <img
                   src={coin.image.large}
                   alt={coin.name}
                   className={styles.coin_image}
                 />
+                {/* NAME */}
                 <h1 className={styles.coin_name}>{coin.name}</h1>
+                {/* TICKER */}
                 <p className={styles.coin_ticker}>
                   {coin.symbol.toUpperCase()}
                 </p>
+                {/* CURRENT_PRICE */}
                 <p className={styles.coin_current}>
                   ${coin.market_data.current_price.nzd.toLocaleString()} NZD
                 </p>
+                {/* LAST_UPDATED */}
                 <h3>Last updated: </h3>
                 <p className={styles.last_updated}>{momentTime}</p>
-                {/* ------------- 24h Change---------------*/}
+                {/* 24_HOUR CHANGE_*/}
                 <div className={styles.coin_grid}>
                   <div className={styles.coin_information}>
                     <div className={styles.coin_flex}>
@@ -63,21 +69,20 @@ const Coin = ({ coin }) => {
                           <p className={(styles.price_change, styles.red)}>
                             $
                             {coin.market_data.price_change_24h.toLocaleString()}
-                          </p>{" "}
+                          </p>
                         </>
                       ) : (
                         <>
-                          {" "}
                           <p className={(styles.price_change, styles.green)}>
                             $
                             {coin.market_data.price_change_24h.toLocaleString()}
-                          </p>{" "}
+                          </p>
                         </>
                       )}
                     </div>
                   </div>
 
-                  {/* ------------- 24h High ---------------*/}
+                  {/* 24_HOUR_HIGH */}
 
                   <div className={styles.coin_information}>
                     <div className="coin_flex">
@@ -88,7 +93,7 @@ const Coin = ({ coin }) => {
                     </div>
                   </div>
 
-                  {/* ------------- 24h Low ---------------*/}
+                  {/* 24_HOUR_LOW*/}
 
                   <div className={styles.coin_information}>
                     <div className="coin_flex">
@@ -99,7 +104,7 @@ const Coin = ({ coin }) => {
                     </div>
                   </div>
 
-                  {/* ------------- % change 24h ---------------*/}
+                  {/* %_CHANGE_IN_24_HOURS*/}
 
                   <div className={styles.coin_information}>
                     <div className="coin_flex">
@@ -107,11 +112,10 @@ const Coin = ({ coin }) => {
 
                       {coin.market_data.price_change_percentage_24h < 0 ? (
                         <>
-                          {" "}
                           <p
                             className={(styles.percentage_increase, styles.red)}
                           >
-                            {coin.market_data.price_change_percentage_24h.toLocaleString()}
+                            {coin.market_data.price_change_percentage_24h.toLocaleString()}{" "}
                             %
                           </p>
                         </>
@@ -126,7 +130,7 @@ const Coin = ({ coin }) => {
                     </div>
                   </div>
 
-                  {/* ------------- total volume ---------------*/}
+                  {/* TOTAL_VOLUME*/}
 
                   <div className={styles.coin_information}>
                     <div className="coin_flex">
@@ -137,18 +141,7 @@ const Coin = ({ coin }) => {
                     </div>
                   </div>
 
-                  {/* ------------- total supply ---------------*/}
-
-                  {/* <div className={styles.coin_information}>
-              <div className="coin_flex">
-                <h3>Total Supply: </h3>
-                <p className={styles.last_updated}>
-                  {coin.market_data.total_supply.toLocaleString()}
-                </p>
-              </div>
-            </div> */}
-
-                  {/* ------------- market cap ---------------*/}
+                  {/* MARKET_CAP */}
 
                   <div className={styles.coin_information}>
                     <div className="coin_flex">
@@ -161,7 +154,7 @@ const Coin = ({ coin }) => {
                 </div>{" "}
               </>
             )}
-            {/* Button to go to chart page abd back */}
+
             <button className={styles.button} onClick={handleClick}>
               {buttonName}
             </button>

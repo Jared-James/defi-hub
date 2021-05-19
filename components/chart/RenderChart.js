@@ -3,6 +3,7 @@ import styles from "./chart.module.css";
 
 import Chart from "chart.js/auto";
 
+// Settings for chartJS
 const historyOption = {
   lineHeightAnnotation: {
     always: true,
@@ -21,6 +22,8 @@ const historyOption = {
 
 const RenderChartComponent = ({ info, BTC }) => {
   const chartRef = useRef();
+
+  // Checks to see if chart is registered before rendering 
 
   useEffect(() => {
     const { day } = info;

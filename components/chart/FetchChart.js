@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RenderChartComponent from "./RenderChartComponent";
+import RenderChart from "./RenderChart";
 import moment from "moment";
 import "chartjs-adapter-moment";
 import Loading from "../Loading/Loading";
@@ -18,14 +18,18 @@ const FetchChartComponent = ({ id }) => {
     });
   };
 
+// Calls api and returns with daily price data
+// Change interval=daily to other values, such as hourly, days, ect, to recieve more data
+
   useEffect(async () => {
+
+
     isLoading(true);
+
     const res = await fetch(
       `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=nzd&days=30&interval=daily`
     );
     const data = await res.json();
-
-    console.log("data", id);
 
     setId(id);
     setChart({
@@ -39,7 +43,7 @@ const FetchChartComponent = ({ id }) => {
   return (
     <>
       {loading && <Loading />}
-      {chart && <RenderChartComponent info={chart} BTC={id} />}
+      {chart && <RenderChart info={chart} BTC={id} />}
     </>
   );
 };
