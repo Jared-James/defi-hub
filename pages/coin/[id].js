@@ -160,14 +160,15 @@ const Coin = ({ coin }) => {
                 </div>{" "}
               </>
             )}
-                {/* Button to go to chart page abd back */}
-                <button className={styles.button} onClick={handleClick}>
+              {/* Button to go to chart page abd back */}
+              <button className={styles.button} onClick={handleClick}>
                   {buttonName}
                 </button>
+        
           </div>
           
         </div>
-        
+         
       </Layout>
     </>
   );

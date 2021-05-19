@@ -65,7 +65,9 @@
 
 .button {
   width: 6rem;
-  margin-bottom: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+
   height: 2rem;
   border-radius: 2rem;
   background-color: transparent;

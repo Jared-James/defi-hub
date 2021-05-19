@@ -59,6 +59,7 @@ const ShowChart = ({ info, BTC }) => {
           height={500}
         ></canvas>
       </div>
+      {/* <div className={styles.chartBottom}>Hello</div> */}
     </div>
   );
 };
