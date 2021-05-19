@@ -2,7 +2,8 @@ import { useState } from "react";
 import Layout from "../../components/layout/Layout";
 import styles from "./Coin.module.css";
 import ChartComponent from "../../components/chart/ChartComponent";
-import moment from 'moment'
+import moment from "moment";
+import Link from "next/link";
 
 const Coin = ({ coin }) => {
   const [toggle, setToggle] = useState(false);
@@ -19,21 +20,24 @@ const Coin = ({ coin }) => {
     }
   };
 
-
-  let time = coin.market_data.last_updated
-  let momentTime = moment(time).format('LLL')
+  let time = coin.market_data.last_updated;
+  let momentTime = moment(time).format("LLL");
 
   return (
     <>
       <Layout>
         <div className={styles.coin_page}>
           <div className={styles.coin_container}>
-             
             {toggle ? (
               <ChartComponent {...coin} />
             ) : (
               <>
-                {" "}
+                <div className={styles.coin_return}>
+                  <Link href="/">
+               
+                    <img src="https://img.icons8.com/fluent/50/000000/back.png" />
+                  </Link>
+                </div>
                 <img
                   src={coin.image.large}
                   alt={coin.name}
@@ -47,10 +51,7 @@ const Coin = ({ coin }) => {
                   ${coin.market_data.current_price.nzd.toLocaleString()} NZD
                 </p>
                 <h3>Last updated: </h3>
-                <p className={styles.last_updated}>
-                  {momentTime}
-                </p>
-           
+                <p className={styles.last_updated}>{momentTime}</p>
                 {/* ------------- 24h Change---------------*/}
                 <div className={styles.coin_grid}>
                   <div className={styles.coin_information}>
@@ -160,15 +161,12 @@ const Coin = ({ coin }) => {
                 </div>{" "}
               </>
             )}
-              {/* Button to go to chart page abd back */}
-              <button className={styles.button} onClick={handleClick}>
-                  {buttonName}
-                </button>
-        
+            {/* Button to go to chart page abd back */}
+            <button className={styles.button} onClick={handleClick}>
+              {buttonName}
+            </button>
           </div>
-          
         </div>
-         
       </Layout>
     </>
   );

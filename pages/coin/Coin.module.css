@@ -111,3 +111,11 @@
     margin-top: 1rem;
   }
 }
+
+.coin_return {
+ height: 50px;
+width: 100%;
+margin-left: 4rem;
+transform: translateY(2rem);
+cursor: pointer;
+}
