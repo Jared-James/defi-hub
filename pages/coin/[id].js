@@ -23,10 +23,7 @@ const Coin = ({ coin }) => {
       <Layout>
         <div className={styles.coin_page}>
           <div className={styles.coin_container}>
-                 {/* Button to go to chart page abd back */}
-                 <button className={styles.button} onClick={handleClick}>
-                  {buttonName}
-                </button>
+             
             {toggle ? (
               <ChartComponent {...coin} />
             ) : (
@@ -158,8 +155,14 @@ const Coin = ({ coin }) => {
                 </div>{" "}
               </>
             )}
+                {/* Button to go to chart page abd back */}
+                <button className={styles.button} onClick={handleClick}>
+                  {buttonName}
+                </button>
           </div>
+          
         </div>
+        
       </Layout>
     </>
   );
