@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ShowChart from "./ShowChart";
 import moment from "moment";
 import "chartjs-adapter-moment";
-import Loading from "./Loading";
+import Loading from "../Loading/Loading";
 
 const Hello = ({ id }) => {
   const [btcId, setId] = useState("");

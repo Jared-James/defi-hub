@@ -1,4 +1,4 @@
-import styles from "./chart.module.css";
+import styles from "./loading.module.css";
 
 const Loading = () => {
   return (
