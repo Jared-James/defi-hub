@@ -19,7 +19,7 @@ const historyOption = {
   },
 };
 
-const ShowChart = ({ info, BTC }) => {
+const RenderChartComponent = ({ info, BTC }) => {
   const chartRef = useRef();
 
   useEffect(() => {
@@ -59,9 +59,8 @@ const ShowChart = ({ info, BTC }) => {
           height={500}
         ></canvas>
       </div>
-      {/* <div className={styles.chartBottom}>Hello</div> */}
     </div>
   );
 };
 
-export default ShowChart;
+export default RenderChartComponent;

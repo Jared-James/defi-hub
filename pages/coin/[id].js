@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Layout from "../../components/layout/Layout";
 import styles from "./Coin.module.css";
-import ChartComponent from "../../components/chart/ChartComponent";
+import FetchChartComponent from "../../components/chart/FetchChartComponent";
 import moment from "moment";
 import Link from "next/link";
 
@@ -29,7 +29,7 @@ const Coin = ({ coin }) => {
         <div className={styles.coin_page}>
           <div className={styles.coin_container}>
             {toggle ? (
-              <ChartComponent {...coin} />
+              <FetchChartComponent {...coin} />
             ) : (
               <>
                 <div className={styles.coin_return}>

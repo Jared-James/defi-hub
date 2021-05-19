@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import ShowChart from "./ShowChart";
+import RenderChartComponent from "./RenderChartComponent";
 import moment from "moment";
 import "chartjs-adapter-moment";
 import Loading from "../Loading/Loading";
 
-const Hello = ({ id }) => {
+const FetchChartComponent = ({ id }) => {
   const [btcId, setId] = useState("");
   const [chart, setChart] = useState();
   const [loading, isLoading] = useState(false);
@@ -39,12 +39,12 @@ const Hello = ({ id }) => {
   return (
     <>
       {loading && <Loading />}
-      {chart && <ShowChart info={chart} BTC={id} />}
+      {chart && <RenderChartComponent info={chart} BTC={id} />}
     </>
   );
 };
 
-export default Hello;
+export default FetchChartComponent;
 
 export async function getServerSideProps(context) {
   const { id } = context.query;
