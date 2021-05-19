@@ -2,6 +2,7 @@ import { useState } from "react";
 import Layout from "../../components/layout/Layout";
 import styles from "./Coin.module.css";
 import ChartComponent from "../../components/chart/ChartComponent";
+import moment from 'moment'
 
 const Coin = ({ coin }) => {
   const [toggle, setToggle] = useState(false);
@@ -17,6 +18,10 @@ const Coin = ({ coin }) => {
       setButton("View Chart");
     }
   };
+
+
+  let time = coin.market_data.last_updated
+  let momentTime = moment(time).format('LLL')
 
   return (
     <>
@@ -43,7 +48,7 @@ const Coin = ({ coin }) => {
                 </p>
                 <h3>Last updated: </h3>
                 <p className={styles.last_updated}>
-                  {coin.market_data.last_updated}
+                  {momentTime}
                 </p>
            
                 {/* ------------- 24h Change---------------*/}
