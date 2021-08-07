@@ -1,13 +1,17 @@
-import styles from './Search.module.css'
+import styles from "./Search.module.css";
+import { FaSearchDollar } from 'react-icons/fa';
 
-const SearchBarComponent = ({...rest}) => {
-    return (
-        <>
-            <div className={styles.coin_search}>
-                <input className={styles.coin_input} {...rest} />
-            </div>
-        </>
-    )
-}
+const SearchBarComponent = ({ ...rest }) => {
+  return (
+    <>
+      <div className={styles.search}>
+        <div className={styles.search__container}>
+          <input className={styles.search__container_input} {...rest} />
+          <div className={styles.search__container_icon}><FaSearchDollar /></div>
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default SearchBarComponent
+export default SearchBarComponent;

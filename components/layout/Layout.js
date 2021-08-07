@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
-
+import styles from "./Layout.module.css";
+import NavBarComponent from "../navBar/NavBarComponent";
 const Layout = ({ children, title = "Crypto Tracker" }) => {
   return (
     <>
@@ -10,13 +11,7 @@ const Layout = ({ children, title = "Crypto Tracker" }) => {
           <meta name="description" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <header className="header">
-          <Link href="/" passHref>
-            <a>
-              <img className="logo" src="/svg-2.svg" />
-            </a>
-          </Link>
-        </header>
+        <NavBarComponent />
         <main>{children}</main>
       </div>
     </>

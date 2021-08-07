@@ -3,11 +3,9 @@ import FilteredCoins from "../components/CryptoCoins/FilteredCoins";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Layout from "../components/layout/Layout";
 
-
 export default function Home({ filteredCoins }) {
   const [search, setSearch] = useState("");
 
-  // Seach function
   const allCoins = filteredCoins.filter((coin) => {
     return coin.name.toLowerCase().includes(search.toLowerCase());
   });
@@ -19,10 +17,8 @@ export default function Home({ filteredCoins }) {
 
   return (
     <Layout>
-      <div className="coin_app">
-        <SearchBar type="text" placeholder="search" onChange={handleChange} />
-        <FilteredCoins filteredCoins={allCoins} />
-      </div>
+      <SearchBar type="text" placeholder="search..." onChange={handleChange} />
+      <FilteredCoins filteredCoins={allCoins} />
     </Layout>
   );
 }

@@ -1,0 +1,23 @@
+.nav {
+  display: flex;
+  background-color: #fff;
+  justify-content: flex-start;
+  align-items: center;
+  height: 4rem;
+  border-bottom: 1px solid black;
+
+}
+
+.nav__title {
+
+color: #000;
+}
+
+.nav__bitcoin {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}

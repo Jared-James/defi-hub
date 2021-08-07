@@ -7,68 +7,57 @@
   grid-area: coin_percent;
 }
 
-.coin_row {
+.coin_container {
+}
+
+.coin__row {
   display: grid;
-  width: 100vw;
-  grid-template-columns: 0.3fr 1.5fr 0.6fr 1fr 0.9fr;
-  gap: 0.2rem;
+  grid-template-columns: 0.5fr 1.8fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "coin_img coin_h1 coin_symbol coin_percent coin_price";
-  padding: 1rem 0 1rem 0;
-  font-size: 0.8rem;
-  justify-content: center;
-  align-items: center;
+  padding: 1rem 0rem;
+  font-size: 0.85rem;
+  margin: 0;
+  padding: 1rem 0;
+  justify-content:center;
+  align-items:center;
 }
 
-.coin_row:hover {
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(253, 253, 255, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-    filter: brightness(140%);
-}
-
-.coin_img {
+.coin__img {
   height: 25px;
   width: 25px;
-  margin-right: 1rem;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   grid-area: coin_img;
 }
 
-.coin {
-  align-items: center;
-  justify-content: center;
-}
-
-.coin_h1 {
+.coin__name {
   grid-area: coin_h1;
-  font-size: 0.8rem;
 }
 
-.coin_symbol {
+.coin__symbol {
   text-transform: uppercase;
-  margin-right: 1rem;
   grid-area: coin_symbol;
 }
 
-.coin_percent {
-  text-align: center;
-  margin-right: 10%;
-  margin-right: 1rem;
-  grid-area: coin_percent;
-}
-
-.coin_price {
-  margin-right: 1rem;
+.coin__price {
   grid-area: coin_price;
 }
 
-.coin_volume {
+.coin__container_percent {
+  text-align: center;
+  margin-right: 10%;
+  grid-area: coin_percent;
+}
+
+.coin__market {
   display: none;
 }
 
-.coin_market {
+.coin__volume {
   display: none;
 }
+
+
 
 @media screen and (min-width: 720px) {
   .coin_row {
@@ -89,12 +78,9 @@
   }
 }
 
-
 @media screen and (min-width: 1000px) {
-    .coin_row {
-      grid-template-columns: 1fr 0.3fr 0.4fr 0.4fr 0.4fr 0.4fr .4fr .7fr .7fr;
-      grid-template-areas: ". coin_img coin_h1 coin_symbol coin_percent coin_price coin_market coin_volume .";
-    }
-
-    }
-
+  .coin_row {
+    grid-template-columns: 1fr 0.3fr 0.4fr 0.4fr 0.4fr 0.4fr 0.4fr 0.7fr 0.7fr;
+    grid-template-areas: ". coin_img coin_h1 coin_symbol coin_percent coin_price coin_market coin_volume .";
+  }
+}
