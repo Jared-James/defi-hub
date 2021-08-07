@@ -3,6 +3,7 @@ import FilteredCoins from "../components/CryptoCoins/FilteredCoins";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Layout from "../components/layout/Layout";
 
+
 export default function Home({ filteredCoins }) {
   const [search, setSearch] = useState("");
 
