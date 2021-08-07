@@ -12,9 +12,12 @@ const RenderCoins = ({
   price_change_percentage_24h,
 }) => {
   return (
-    <Link href="/coin/[id]" as={`/coin/${id}`}>
-      <a>
+    <>
+    
+     
         <div className={styles.coin_container}>
+        <Link href="/coin/[id]" as={`/coin/${id}`}>
+        <a>
           <div className={styles.coin__row}>
             {/* IMAGE */}
             <img src={image} alt={name} className={styles.coin__img} />
@@ -23,6 +26,7 @@ const RenderCoins = ({
             <p className={styles.coin__name}>{name}</p>
 
             {/* SYMBOL */}
+          
             <p className={styles.coin__symbol}>{symbol}</p>
 
             {/* CURRENT_PRICE */}
@@ -49,9 +53,12 @@ const RenderCoins = ({
               Total Volume: ${total_volume.toLocaleString()}
             </p>
           </div>
+          </a>
+          </Link>
         </div>
-      </a>
-    </Link>
+    
+ 
+    </>
   );
 };
 

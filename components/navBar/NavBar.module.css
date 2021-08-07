@@ -5,11 +5,10 @@
   align-items: center;
   height: 4rem;
   border-bottom: 1px solid black;
-
 }
 
-.nav__title {
 
+.nav__title {
 color: #000;
 }
 
@@ -20,4 +19,10 @@ color: #000;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+@media screen and (min-width: 1000px) {
+  .nav__bitcoin {
+    margin-left: 25%;
+  }
 }

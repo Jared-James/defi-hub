@@ -18,6 +18,7 @@ export default function Home({ filteredCoins }) {
   return (
     <Layout>
       <SearchBar type="text" placeholder="search..." onChange={handleChange} />
+
       <FilteredCoins filteredCoins={allCoins} />
     </Layout>
   );

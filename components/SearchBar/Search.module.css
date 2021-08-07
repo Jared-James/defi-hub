@@ -9,6 +9,16 @@
 .search__container {
   width: 80%;
   position: relative;
+
+ 
+}
+
+@media screen and (min-width: 720px) { 
+ 
+.search__container {
+  width: 800px;
+ 
+}
 }
 
 .search__container_icon {
