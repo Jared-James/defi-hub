@@ -3,22 +3,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  margin: 2rem 0rem;
 }
 
 .search__container {
   width: 80%;
   position: relative;
-
- 
 }
 
-@media screen and (min-width: 720px) { 
- 
-.search__container {
-  width: 800px;
- 
-}
+@media screen and (min-width: 720px) {
+  .search {
+    margin: 4rem 0rem;
+  }
+
+  .search__container {
+    width: 800px;
+  }
 }
 
 .search__container_icon {
@@ -29,7 +29,8 @@
 }
 
 .search__container_input {
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   background: transparent;
   border: none;
   padding: 1rem;
