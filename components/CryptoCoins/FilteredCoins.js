@@ -41,7 +41,7 @@ export default function FilteredCoins({ filteredCoins }) {
     <>
       <div className={styles.sort}>
         <div className={styles.sort_coin}>
-            <div>
+            <div className={styles.sort_arrow}>
               <FaArrowUp onClick={sortByNameASC}/>
             </div>
             <div>
@@ -49,7 +49,7 @@ export default function FilteredCoins({ filteredCoins }) {
             </div>
         </div>
         <div className={styles.sort_symbol}>
-            <div>
+            <div className={styles.sort_arrow}>
              <FaArrowUp onClick={sortBySymbolASC}/>
             </div>
             <div>
@@ -58,7 +58,7 @@ export default function FilteredCoins({ filteredCoins }) {
       
         </div>
         <div className={styles.sort_percent}>
-        <div>
+        <div className={styles.sort_arrow}>
             <FaArrowUp onClick={sortByPercentASC}/>
           </div>
           <div>
@@ -68,7 +68,7 @@ export default function FilteredCoins({ filteredCoins }) {
         </div>
         <div className={styles.sort_price}>
        
-          <div>
+          <div className={styles.sort_arrow}>
             <FaArrowUp onClick={sortByPriceASC}/>
           </div>
           <div>

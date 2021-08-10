@@ -111,11 +111,13 @@
   padding: 1rem 0;
   justify-content:center;
   align-items:center;
+  font-size: 1.1rem;
 }
 
 .sort_coin {
 grid-area: sort_coin;
 display: flex;
+
 }
 
 .sort_symbol {
@@ -129,4 +131,8 @@ display: flex;
 .sort_price {
   grid-area: sort_price;
   display: flex;
+}
+
+.sort_arrow {
+  margin-right: 0.5rem;
 }

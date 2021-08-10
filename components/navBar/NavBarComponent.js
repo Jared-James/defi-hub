@@ -16,6 +16,8 @@ const navBarComponent = () => {
                <li className={styles.nav__list_item}>Profile</li>
           )}
            <li className={styles.nav__list_item}>Sign in</li>
+           <li>Register</li>
+           {/* <li>NZD</li> */}
        </ul>
       </div>
     </div>
