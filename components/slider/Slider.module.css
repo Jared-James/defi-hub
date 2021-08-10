@@ -1,0 +1,13 @@
+.slider {
+    width: 1000px;
+    margin: auto;
+}
+
+.red {
+    color: #f00606;
+    grid-area: coin_percent;
+  }
+  .green {
+    color: #13c783;
+    grid-area: coin_percent;
+  }

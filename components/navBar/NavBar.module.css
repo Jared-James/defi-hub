@@ -6,12 +6,6 @@
   height: 4rem;
   border-bottom: 1px solid black;
 }
-
-
-.nav__title {
-color: #000;
-}
-
 .nav__bitcoin {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -25,4 +19,33 @@ color: #000;
   .nav__bitcoin {
     margin-left: 25%;
   }
+}
+
+.nav__title {
+  color: #000;
+  width: 240px;
+  }
+
+.nav__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+
+}
+
+@media screen and (min-width: 1000px) {
+  .nav__links {
+    margin-right: 25%;
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding: 0rem 2rem;
+}
+.nav__list_item {
+margin: 0rem 1rem;
 }
