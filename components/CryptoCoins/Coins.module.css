@@ -105,7 +105,7 @@
   display: grid;
   grid-template-columns: 0.5fr 1.8fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas: ". sort_coin sort_symbol sort_percent sort_price";
+  grid-template-areas: "refresh sort_coin sort_symbol sort_percent sort_price";
   padding: 1rem 0rem;
   font-size: 0.85rem;
   padding: 0rem 0;
@@ -114,11 +114,20 @@
   font-size: 1.1rem;
 }
 
+
+.refresh {
+  grid-area: refresh;
+  display: flex;
+  justify-content: flex-start;
+  }
+
 .sort_coin {
 grid-area: sort_coin;
 display: flex;
 flex-direction: column;
 }
+
+
 
 .sort_title {
   display: flex;
@@ -135,6 +144,12 @@ flex-direction: column;
   display: flex;
   flex-direction: column;
 }
+
+.sort_percent_row {
+  display: flex;
+
+}
+
 .sort_price {
   grid-area: sort_price;
   display: flex;
@@ -144,3 +159,4 @@ flex-direction: column;
 .sort_arrow {
   margin-right: 0.5rem;
 }
+

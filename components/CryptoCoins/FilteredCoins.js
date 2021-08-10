@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import RenderCoins from "./RenderCoins";
 import styles from "./Coins.module.css";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
+import { FiRefreshCcw } from "react-icons/fi";
 
 export default function FilteredCoins({ filteredCoins }) {
   const [sorted, setSorted] = useState("default");
+  const [changeColor, setChangeColor] = useState("red");
 
   filteredCoins.sort((a, b) => {
     if (sorted === "nameASC" && b.name.toLowerCase() > a.name.toLowerCase())
@@ -36,6 +38,9 @@ export default function FilteredCoins({ filteredCoins }) {
 
     if (sorted === "priceASC" && a.current_price > b.current_price) return -1;
     if (sorted === "priceDSC" && b.current_price > a.current_price) return -1;
+
+    if (sorted === "marketCap" && b.market_cap_rank > a.market_cap_rank)
+      return -1;
   });
 
   const sortByNameASC = () => setSorted("nameASC");
@@ -50,31 +55,36 @@ export default function FilteredCoins({ filteredCoins }) {
   const sortByPriceASC = () => setSorted("priceASC");
   const sortByPriceDSC = () => setSorted("priceDSC");
 
-  const handleClick = () => {};
+  const handleRefresh = () => setSorted("marketCap");
 
-  const [changeColor, setChangeColor] = useState("red");
+  useEffect(() => {
+    setTimeout(() => {
+      if (changeColor === "green") {
+        setChangeColor("red");
+      } else if (changeColor === "red") {
+        setChangeColor("green");
+      }
+    }, 1000);
+  }, [changeColor]);
 
+  let iconStyles = { fill: "red" };
+  let iconStyles2 = { fill: "green" };
 
-useEffect(() => {
-  setTimeout(() => {
-    if (changeColor === "green") {
-      setChangeColor("red");
-    } else if (changeColor === "red") {
-      setChangeColor("green");
-    }
-  }, 1000);
-
-
-}, [changeColor])
-
-
-
+  (changeColor === "red" && `${styles.green}`) ||
+    (changeColor === "green" && `${styles.red}`);
 
   return (
     <>
       <div className={styles.sort}>
+        <div className={styles.refresh}>
+          <div className={styles.sort_title}>
+            <div>
+              <FiRefreshCcw onClick={handleRefresh} />
+            </div>
+          </div>
+        </div>
         <div className={styles.sort_coin}>
-          <h4> Name</h4>
+          <h4>Name</h4>
           <div className={styles.sort_title}>
             <div className={styles.sort_arrow}>
               <FaArrowUp onClick={sortByNameASC} />
@@ -98,20 +108,21 @@ useEffect(() => {
         </div>
 
         <div className={styles.sort_percent}>
-          <h4
-            className={
-              (changeColor === "red" && `${styles.red}`) ||
-              (changeColor === "green" && `${styles.green}`)
-            }
-          >
-            24H Change
-          </h4>
+          <div className={styles.sort_percent_row}>
+            <h4>24H Change</h4>
+          </div>
           <div className={styles.sort_title}>
             <div className={styles.sort_arrow}>
-              <FaArrowUp onClick={sortByPercentASC} />
+              <FaArrowUp
+                style={changeColor === "red" ? iconStyles : iconStyles2}
+                onClick={sortByPercentASC}
+              />
             </div>
             <div>
-              <FaArrowDown onClick={sortByPercentDSC} />
+              <FaArrowDown
+                style={changeColor === "red" ? iconStyles2 : iconStyles}
+                onClick={sortByPercentDSC}
+              />
             </div>
           </div>
         </div>
@@ -129,7 +140,7 @@ useEffect(() => {
         </div>
       </div>
       {filteredCoins.map((coin) => {
-        return <RenderCoins key={coin.id} {...coin} setSorted={setSorted} />;
+        return <RenderCoins key={coin.id} {...coin} />;
       })}
     </>
   );
