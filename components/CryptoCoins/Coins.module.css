@@ -7,9 +7,6 @@
   grid-area: coin_percent;
 }
 
-.coin_container {
-}
-
 .coin__row {
   display: grid;
   grid-template-columns: 0.5fr 1.8fr 1fr 1fr 1fr;
@@ -55,6 +52,22 @@
 
 .coin__volume {
   display: none;
+}
+
+.sort, 
+.sort_arrow, 
+.refresh,
+.coin__volume,
+.coin__market {
+  display: none;
+}
+
+@media screen and (min-width: 415px) {
+  .sort,
+  .refresh,
+  .sort_arrow {
+    display: flex;
+  }
 }
 
 @media screen and (min-width: 720px) {
@@ -141,7 +154,6 @@
   grid-area: sort_coin;
   display: flex;
   flex-direction: column;
-
 }
 
 .sort_title {
@@ -178,3 +190,5 @@
   cursor: pointer;
   margin-top: 1rem;
 }
+
+

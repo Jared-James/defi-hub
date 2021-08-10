@@ -5,56 +5,49 @@
   justify-content: flex-start;
   align-items: center;
   height: 4rem;
-  border-bottom: 1px solid black;
-  background: #000046; 
-  background: -webkit-linear-gradient(
-    to right,
-    #1cb5e0,
-    #000046
-  ); 
-  background: linear-gradient(
-    to right,
-    #1cb5e0,
-    #000046
-  ); 
+  border-bottom: 0.5px solid #000;
+  background: #000046;
+  background: -webkit-linear-gradient(to right, #1cb5e0, #000046);
+  background: linear-gradient(to right, #1cb5e0, #000046);
 }
-.nav__bitcoin {
+
+.nav__icon {
   margin-left: 1rem;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   font-size: 2rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-@media screen and (min-width: 1000px) {
-  .nav__bitcoin {
-    margin-left: 20%;
-  }
-}
-
 .nav__title {
-  color: white;
-  width: 240px;
+  display: flex;
+  flex: 1;
+  color: #fff;
 }
 
 .nav__links {
   display: flex;
-  flex-direction: row;
+  flex: 2;
   justify-content: flex-end;
-  width: 100%;
-}
-
-@media screen and (min-width: 1000px) {
-  .nav__links {
-    margin-right: 20%;
-  }
 }
 
 .nav__list {
   display: flex;
-  flex-direction: row;
   list-style-type: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__list_item {
+  margin: 0rem 1rem;
+  color: #fff;
+}
+
+@media screen and (min-width: 415px) {
+  .nav__list_register {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 720px) {
@@ -65,7 +58,12 @@
     padding: 0rem 2rem;
   }
 }
-.nav__list_item {
-  margin: 0rem 1rem;
-  color: white;
+
+@media screen and (min-width: 1000px) {
+  .nav__links {
+    margin-right: 20%;
+  }
+  .nav__bitcoin {
+    margin-left: 20%;
+  }
 }

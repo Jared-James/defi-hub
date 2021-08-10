@@ -92,7 +92,7 @@ export default function FilteredCoins({ filteredCoins }) {
             <div className={styles.sort_arrow}>
               <FaArrowUp onClick={sortByNameASC} className={styles.pointer} />
             </div>
-            <div>
+            <div className={styles.sort_arrow}>
               <FaArrowDown onClick={sortByNameDSC} className={styles.pointer} />
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function FilteredCoins({ filteredCoins }) {
             <div className={styles.sort_arrow}>
               <FaArrowUp onClick={sortBySymbolASC} className={styles.pointer} />
             </div>
-            <div>
+            <div className={styles.sort_arrow}>
               <FaArrowDown
                 onClick={sortBySymbolDSC}
                 className={styles.pointer}
@@ -127,7 +127,7 @@ export default function FilteredCoins({ filteredCoins }) {
                 className={styles.pointer}
               />
             </div>
-            <div>
+            <div className={styles.sort_arrow}>
               <FaArrowDown
                 style={changeColor === "red" ? iconStyles2 : iconStyles}
                 onClick={sortByPercentDSC}
@@ -145,7 +145,7 @@ export default function FilteredCoins({ filteredCoins }) {
                  className={styles.pointer}
               />
             </div>
-            <div>
+            <div className={styles.sort_arrow}>
               <FaArrowDown onClick={sortByPriceDSC}
                  className={styles.pointer}
               />
