@@ -117,8 +117,9 @@
 
 .refresh {
   grid-area: refresh;
-  display: flex;
-  justify-content: flex-start;
+  height: 25px;
+  width: 25px;
+  margin-left: 0.8rem;
   }
 
 .sort_coin {
