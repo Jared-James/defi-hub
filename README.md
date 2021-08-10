@@ -22,7 +22,8 @@ https://jared-crypto.netlify.app/
 #### Version 1.0.6
 - I added the ability to sort for all categories. Name | Symbol | 24H Change & Last Price
 
-
+#### Version 1.0.6
+ - COMMING SOON; WORK IN PROGRESS
 
 Built to work with an API within Next.js 
 
