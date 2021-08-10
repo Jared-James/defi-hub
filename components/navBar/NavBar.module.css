@@ -17,7 +17,7 @@
 
 @media screen and (min-width: 1000px) {
   .nav__bitcoin {
-    margin-left: 25%;
+    margin-left: 20%;
   }
 }
 
@@ -36,7 +36,7 @@
 
 @media screen and (min-width: 1000px) {
   .nav__links {
-    margin-right: 25%;
+    margin-right: 20%;
   }
 }
 

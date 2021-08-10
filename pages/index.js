@@ -20,7 +20,7 @@ export default function Home({ filteredCoins }) {
 
   return (
     <Layout>
-      <SimpleSlider filteredCoins={allCoins}/>
+      <SimpleSlider filteredCoins={filteredCoins}/>
       <SearchBar type="text" placeholder="search..." onChange={handleChange} />
       <FilteredCoins filteredCoins={allCoins} />
     </Layout>

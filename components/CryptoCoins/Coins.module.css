@@ -95,3 +95,38 @@
   
   }
 }
+
+/* Below this is sorted styles */
+
+.sort {
+  /* background-color: red; */
+  width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 0.5fr 1.8fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". sort_coin sort_symbol sort_percent sort_price";
+  padding: 1rem 0rem;
+  font-size: 0.85rem;
+  padding: 1rem 0;
+  justify-content:center;
+  align-items:center;
+}
+
+.sort_coin {
+grid-area: sort_coin;
+display: flex;
+}
+
+.sort_symbol {
+  grid-area: sort_symbol;
+  display: flex;
+}
+.sort_percent {
+  grid-area: sort_percent;
+  display: flex;
+}
+.sort_price {
+  grid-area: sort_price;
+  display: flex;
+}

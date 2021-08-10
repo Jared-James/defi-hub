@@ -23,7 +23,7 @@ export default class SimpleSlider extends Component {
           {this.props.filteredCoins.map((symbol) => (
             <>
               <h3>
-                {symbol.symbol.toUpperCase()} :
+                {symbol.symbol.toUpperCase()} 
                 {symbol.price_change_percentage_24h < 0 ? (
                      <p className={(styles.coin__percent, styles.red)}>
                      {symbol.price_change_percentage_24h.toFixed(2)}%
