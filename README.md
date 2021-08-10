@@ -25,8 +25,7 @@ https://jared-crypto.netlify.app/
 #### Version 1.0.6
  - COMMING SOON; WORK IN PROGRESS
 
-Built to work with an API within Next.js 
-
+---
 
 ### *Technologies used*
 - JavaScript
