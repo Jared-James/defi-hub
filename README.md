@@ -27,11 +27,13 @@ https://jared-crypto.netlify.app/
 
 ---
 
-### *Technologies used*
+### 🔨 Built with
 - JavaScript
 - NextJS
 - CoinGecko API
 - Chart.js
 - module.css
+
+---
 
 
