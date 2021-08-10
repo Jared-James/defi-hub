@@ -7,76 +7,126 @@ export default function FilteredCoins({ filteredCoins }) {
   const [sorted, setSorted] = useState("default");
 
   filteredCoins.sort((a, b) => {
-    if (sorted === 'nameASC' && b.name.toLowerCase() > a.name.toLowerCase()) return  -1;
-    if (sorted === 'nameDSC' && a.name.toLowerCase() > b.name.toLowerCase()) return  -1;
+    if (sorted === "nameASC" && b.name.toLowerCase() > a.name.toLowerCase())
+      return -1;
+    if (sorted === "nameDSC" && a.name.toLowerCase() > b.name.toLowerCase())
+      return -1;
 
-    if (sorted === 'symbolASC' && b.symbol.toLowerCase() > a.symbol.toLowerCase()) return  -1;
-    if (sorted === 'symbolDSC' && a.symbol.toLowerCase() > b.symbol.toLowerCase()) return  -1;
+    if (
+      sorted === "symbolASC" &&
+      b.symbol.toLowerCase() > a.symbol.toLowerCase()
+    )
+      return -1;
+    if (
+      sorted === "symbolDSC" &&
+      a.symbol.toLowerCase() > b.symbol.toLowerCase()
+    )
+      return -1;
 
-    if (sorted === 'percentASC' && a.price_change_percentage_24h > b.price_change_percentage_24h) return  -1;
-    if (sorted === 'percentDSC' && b.price_change_percentage_24h > a.price_change_percentage_24h) return  -1;
+    if (
+      sorted === "percentASC" &&
+      a.price_change_percentage_24h > b.price_change_percentage_24h
+    )
+      return -1;
+    if (
+      sorted === "percentDSC" &&
+      b.price_change_percentage_24h > a.price_change_percentage_24h
+    )
+      return -1;
 
-    if (sorted === 'priceASC' && a.current_price > b.current_price) return  -1;
-    if (sorted === 'priceDSC' && b.current_price > a.current_price) return  -1;
+    if (sorted === "priceASC" && a.current_price > b.current_price) return -1;
+    if (sorted === "priceDSC" && b.current_price > a.current_price) return -1;
   });
 
-  const sortByNameASC = () => setSorted('nameASC')
-  const sortByNameDSC = () => setSorted('nameDSC')
+  const sortByNameASC = () => setSorted("nameASC");
+  const sortByNameDSC = () => setSorted("nameDSC");
 
-  const sortBySymbolASC = () => setSorted('symbolASC')
-  const sortBySymbolDSC = () => setSorted('symbolDSC')
+  const sortBySymbolASC = () => setSorted("symbolASC");
+  const sortBySymbolDSC = () => setSorted("symbolDSC");
 
-  const sortByPercentASC = () => setSorted('percentASC')
-  const sortByPercentDSC = () => setSorted('percentDSC')
+  const sortByPercentASC = () => setSorted("percentASC");
+  const sortByPercentDSC = () => setSorted("percentDSC");
 
-  const sortByPriceASC = () => setSorted('priceASC')
-  const sortByPriceDSC = () => setSorted('priceDSC')
+  const sortByPriceASC = () => setSorted("priceASC");
+  const sortByPriceDSC = () => setSorted("priceDSC");
+
+  const handleClick = () => {};
+
+  const [changeColor, setChangeColor] = useState("red");
+
+
+useEffect(() => {
+  setTimeout(() => {
+    if (changeColor === "green") {
+      setChangeColor("red");
+    } else if (changeColor === "red") {
+      setChangeColor("green");
+    }
+  }, 1000);
+
+
+}, [changeColor])
 
 
 
-
-  const handleClick = () => {}
 
   return (
     <>
       <div className={styles.sort}>
         <div className={styles.sort_coin}>
+          <h4> Name</h4>
+          <div className={styles.sort_title}>
             <div className={styles.sort_arrow}>
-              <FaArrowUp onClick={sortByNameASC}/>
+              <FaArrowUp onClick={sortByNameASC} />
             </div>
             <div>
-              <FaArrowDown onClick={sortByNameDSC}/>
+              <FaArrowDown onClick={sortByNameDSC} />
             </div>
+          </div>
         </div>
+
         <div className={styles.sort_symbol}>
+          <h4>Symbol</h4>
+          <div className={styles.sort_title}>
             <div className={styles.sort_arrow}>
-             <FaArrowUp onClick={sortBySymbolASC}/>
+              <FaArrowUp onClick={sortBySymbolASC} />
             </div>
             <div>
-            <FaArrowDown onClick={sortBySymbolDSC}/>
+              <FaArrowDown onClick={sortBySymbolDSC} />
+            </div>
+          </div>
         </div>
-      
-        </div>
+
         <div className={styles.sort_percent}>
-        <div className={styles.sort_arrow}>
-            <FaArrowUp onClick={sortByPercentASC}/>
+          <h4
+            className={
+              (changeColor === "red" && `${styles.red}`) ||
+              (changeColor === "green" && `${styles.green}`)
+            }
+          >
+            24H Change
+          </h4>
+          <div className={styles.sort_title}>
+            <div className={styles.sort_arrow}>
+              <FaArrowUp onClick={sortByPercentASC} />
+            </div>
+            <div>
+              <FaArrowDown onClick={sortByPercentDSC} />
+            </div>
           </div>
-          <div>
-            <FaArrowDown onClick={sortByPercentDSC}/>
-          </div>
-        
         </div>
+
         <div className={styles.sort_price}>
-       
-          <div className={styles.sort_arrow}>
-            <FaArrowUp onClick={sortByPriceASC}/>
+          <h4>Last Price</h4>
+          <div className={styles.sort_title}>
+            <div className={styles.sort_arrow}>
+              <FaArrowUp onClick={sortByPriceASC} />
+            </div>
+            <div>
+              <FaArrowDown onClick={sortByPriceDSC} />
+            </div>
           </div>
-          <div>
-            <FaArrowDown onClick={sortByPriceDSC}/>
-          </div>
-          
         </div>
-     
       </div>
       {filteredCoins.map((coin) => {
         return <RenderCoins key={coin.id} {...coin} setSorted={setSorted} />;

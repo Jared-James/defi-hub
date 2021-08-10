@@ -108,7 +108,7 @@
   grid-template-areas: ". sort_coin sort_symbol sort_percent sort_price";
   padding: 1rem 0rem;
   font-size: 0.85rem;
-  padding: 1rem 0;
+  padding: 0rem 0;
   justify-content:center;
   align-items:center;
   font-size: 1.1rem;
@@ -117,20 +117,28 @@
 .sort_coin {
 grid-area: sort_coin;
 display: flex;
+flex-direction: column;
+}
 
+.sort_title {
+  display: flex;
+  margin-top: 1rem;
 }
 
 .sort_symbol {
   grid-area: sort_symbol;
   display: flex;
+  flex-direction: column;
 }
 .sort_percent {
   grid-area: sort_percent;
   display: flex;
+  flex-direction: column;
 }
 .sort_price {
   grid-area: sort_price;
   display: flex;
+  flex-direction: column;
 }
 
 .sort_arrow {

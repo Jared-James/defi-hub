@@ -10,7 +10,7 @@
 }
 
 .search__container {
-  width: 80%;
+  width: 70%;
   position: relative;
   color: white;
 }
@@ -21,7 +21,7 @@
   }
 
   .search__container {
-    width: 800px;
+    width: 900px;
     color: white;
   }
 }
