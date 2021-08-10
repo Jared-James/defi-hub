@@ -1,18 +1,22 @@
 .nav {
   display: flex;
-  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+    rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   justify-content: flex-start;
   align-items: center;
   height: 4rem;
   border-bottom: 1px solid black;
-
-
-
-  background: #000046;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-
+  background: #000046; 
+  background: -webkit-linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); 
+  background: linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); 
 }
 .nav__bitcoin {
   margin-left: 1rem;
@@ -32,14 +36,13 @@
 .nav__title {
   color: white;
   width: 240px;
-  }
+}
 
 .nav__links {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   width: 100%;
-
 }
 
 @media screen and (min-width: 1000px) {
@@ -49,13 +52,20 @@
 }
 
 .nav__list {
-  
   display: flex;
   flex-direction: row;
   list-style-type: none;
-  padding: 0rem 2rem;
+}
+
+@media screen and (min-width: 720px) {
+  .nav__list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0rem 2rem;
+  }
 }
 .nav__list_item {
-margin: 0rem 1rem;
-color: white;
+  margin: 0rem 1rem;
+  color: white;
 }

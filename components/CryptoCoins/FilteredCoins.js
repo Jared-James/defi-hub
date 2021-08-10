@@ -79,62 +79,76 @@ export default function FilteredCoins({ filteredCoins }) {
         <div className={styles.refresh}>
           <div className={styles.sort_title}>
             <div>
-              <FiRefreshCcw onClick={handleRefresh} />
+              <FiRefreshCcw
+                onClick={handleRefresh}
+                className={styles.pointer}
+              />
             </div>
           </div>
         </div>
         <div className={styles.sort_coin}>
-          <h4>Name</h4>
+          <h4 className={styles.hidden}>Name</h4>
           <div className={styles.sort_title}>
             <div className={styles.sort_arrow}>
-              <FaArrowUp onClick={sortByNameASC} />
+              <FaArrowUp onClick={sortByNameASC} className={styles.pointer} />
             </div>
             <div>
-              <FaArrowDown onClick={sortByNameDSC} />
+              <FaArrowDown onClick={sortByNameDSC} className={styles.pointer} />
             </div>
           </div>
         </div>
 
         <div className={styles.sort_symbol}>
-          <h4>Symbol</h4>
+          <h4 className={styles.hidden}>Symbol</h4>
           <div className={styles.sort_title}>
             <div className={styles.sort_arrow}>
-              <FaArrowUp onClick={sortBySymbolASC} />
+              <FaArrowUp onClick={sortBySymbolASC} className={styles.pointer} />
             </div>
             <div>
-              <FaArrowDown onClick={sortBySymbolDSC} />
+              <FaArrowDown
+                onClick={sortBySymbolDSC}
+                className={styles.pointer}
+              />
             </div>
           </div>
         </div>
 
         <div className={styles.sort_percent}>
           <div className={styles.sort_percent_row}>
-            <h4>24H Change</h4>
+            <span className={styles.changeSpan}>
+              <span className={styles.hidden}> 24H | Change</span>
+            </span>
           </div>
           <div className={styles.sort_title}>
             <div className={styles.sort_arrow}>
               <FaArrowUp
                 style={changeColor === "red" ? iconStyles : iconStyles2}
                 onClick={sortByPercentASC}
+                className={styles.pointer}
               />
             </div>
             <div>
               <FaArrowDown
                 style={changeColor === "red" ? iconStyles2 : iconStyles}
                 onClick={sortByPercentDSC}
+                className={styles.pointer}
               />
             </div>
           </div>
         </div>
 
         <div className={styles.sort_price}>
-          <h4>Last Price</h4>
+          <h4 className={styles.hidden}>Last Price</h4>
           <div className={styles.sort_title}>
             <div className={styles.sort_arrow}>
-              <FaArrowUp onClick={sortByPriceASC} />
+              <FaArrowUp onClick={sortByPriceASC}
+                 className={styles.pointer}
+              />
             </div>
             <div>
-              <FaArrowDown onClick={sortByPriceDSC} />
+              <FaArrowDown onClick={sortByPriceDSC}
+                 className={styles.pointer}
+              />
             </div>
           </div>
         </div>

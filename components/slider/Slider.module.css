@@ -1,14 +1,26 @@
 .slider {
+  width: 80%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 720px) {
+  .slider {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .slider {
     width: 1000px;
-    margin: auto;
-    margin-top: 1rem;
+  }
 }
 
 .red {
-    color: #f00606;
-    grid-area: coin_percent;
-  }
-  .green {
-    color: #13c783;
-    grid-area: coin_percent;
-  }
+  color: #f00606;
+  grid-area: coin_percent;
+}
+.green {
+  color: #13c783;
+  grid-area: coin_percent;
+}

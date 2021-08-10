@@ -8,7 +8,6 @@
 }
 
 .coin_container {
-
 }
 
 .coin__row {
@@ -20,8 +19,8 @@
   font-size: 0.85rem;
   margin: 0;
   padding: 1rem 0;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
 }
 
 .coin__img {
@@ -58,30 +57,11 @@
   display: none;
 }
 
-
 @media screen and (min-width: 720px) {
-
   .coin_container {
-    width: 900px;
+    width: 100%;
     margin: auto;
   }
-
-  /* .coin_row {
-    grid-template-columns: 0.3fr 0.4fr 0.4fr 0.4fr 0.4fr 1fr 1fr;
-    grid-template-areas: "coin_img coin_h1 coin_symbol coin_percent coin_price coin_market coin_volume";
-  } */
-
-  /* .coin_volume {
-    display: block;
-    width: 135px;
-    margin-right: 1rem;
-    grid-area: coin_volume;
-  }
-
-  .coin_market {
-    display: block;
-    grid-area: coin_market;
-  } */
 }
 
 @media screen and (min-width: 1000px) {
@@ -91,17 +71,14 @@
 
   .coin_container {
     width: 900px;
- 
-  
   }
 }
 
 /* Below this is sorted styles */
 
 .sort {
-  /* background-color: red; */
-  width: 900px;
   margin: auto;
+  width: 100%;
   display: grid;
   grid-template-columns: 0.5fr 1.8fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -109,26 +86,63 @@
   padding: 1rem 0rem;
   font-size: 0.85rem;
   padding: 0rem 0;
-  justify-content:center;
-  align-items:center;
-  font-size: 1.1rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
 }
 
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 720px) {
+  .hidden {
+    display: flex;
+    margin-left: 0.1rem;
+    font-weight: 900;
+  }
+
+  .sort {
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.5fr 1.8fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "refresh sort_coin sort_symbol sort_percent sort_price";
+    padding: 1rem 0rem;
+    font-size: 0.85rem;
+    padding: 0rem 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .sort {
+    width: 900px;
+    margin-bottom: 1rem;
+  }
+}
+
+.changeSpan {
+  display: flex;
+  font-weight: 900;
+}
 
 .refresh {
   grid-area: refresh;
   height: 25px;
   width: 25px;
   margin-left: 0.8rem;
-  }
-
-.sort_coin {
-grid-area: sort_coin;
-display: flex;
-flex-direction: column;
 }
 
+.sort_coin {
+  grid-area: sort_coin;
+  display: flex;
+  flex-direction: column;
 
+}
 
 .sort_title {
   display: flex;
@@ -148,7 +162,6 @@ flex-direction: column;
 
 .sort_percent_row {
   display: flex;
-
 }
 
 .sort_price {
@@ -161,3 +174,7 @@ flex-direction: column;
   margin-right: 0.5rem;
 }
 
+.pointer {
+  cursor: pointer;
+  margin-top: 1rem;
+}
