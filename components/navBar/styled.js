@@ -1,4 +1,6 @@
-.nav {
+import styled from 'styled-components'
+
+export const Nav = styled.div`
   display: flex;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
     rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
@@ -9,61 +11,50 @@
   background: #000046;
   background: -webkit-linear-gradient(to right, #1cb5e0, #000046);
   background: linear-gradient(to right, #1cb5e0, #000046);
-}
 
-.nav__icon {
+`
+
+export const Icon = styled.div`
   margin-left: 1rem;
   margin-right: 0.5rem;
   font-size: 2rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
+  margin-left: 5%;
 
-.nav__title {
-  display: flex;
+  @media (min-width: 768px) {
+      margin-left: 25%;
+  }
+`
+
+export const Title = styled.div`
+display: flex;
   flex: 1;
   color: #fff;
-}
 
-.nav__links {
+
+`
+
+export const Links = styled.div`
   display: flex;
   flex: 2;
   justify-content: flex-end;
-}
+  margin-right: 5%;
 
-.nav__list {
+  @media (min-width: 768px) {
+      margin-right: 25%;
+  }
+`
+
+export const List = styled.ul`
   display: flex;
   list-style-type: none;
   justify-content: center;
   align-items: center;
-}
+`
 
-.nav__list_item {
+export const ListItem = styled.li`
   margin: 0rem 1rem;
   color: #fff;
-}
-
-@media screen and (min-width: 415px) {
-  .nav__list_register {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 720px) {
-  .nav__list {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    padding: 0rem 2rem;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .nav__links {
-    margin-right: 20%;
-  }
-  .nav__bitcoin {
-    margin-left: 20%;
-  }
-}
+`
