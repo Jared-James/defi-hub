@@ -83,12 +83,7 @@ const IndividualMetrics = ({ coin }) => {
             2
           )}%`}</ApiResponse>
         </Metric>
-        <Metric>
-          <Title>RETURNS (YTD)</Title>
-          <ApiResponse>{`${coin.market_data.price_change_percentage_1y_in_currency.nzd.toFixed(
-            2
-          )}%`}</ApiResponse>
-        </Metric>
+
       </MetricContainer>
     </Container>
   );

@@ -3,15 +3,10 @@ import Link from "next/link";
 
 export const Nav = styled.div`
   display: flex;
-  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
-    rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   justify-content: flex-start;
   align-items: center;
   height: 4rem;
-
-  background: #F8F8F8;
-
-
+  background: #808080;
 `;
 
 export const Icon = styled.div`
@@ -31,8 +26,10 @@ export const Icon = styled.div`
 export const Title = styled(Link)`
   display: flex;
   flex: 1;
-  color: #fff;
+  color: #000;
   cursor: pointer;
+  font-weight: 'bold';
+
 `;
 
 export const Links = styled.div`

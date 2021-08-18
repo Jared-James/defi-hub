@@ -51,6 +51,7 @@ const RightSide = styled.div`
 
 const CoinInformationGenesis = styled.p`
   font-size: 0.9rem;
+  margin-bottom: 1rem;
 `;
 
 const CoinInformationMarketRank = styled.p`
@@ -73,7 +74,7 @@ const IndividualHeader = ({ coin }) => {
 
         <RightSide>
           <CoinInformationGenesis>
-            GENESIS DATE {coin.genesis_date}
+            GENESIS DATE: {coin.genesis_date}
           </CoinInformationGenesis>
           <CoinInformationMarketRank>
             MARKET CAP RANK: {coin.market_cap_rank}

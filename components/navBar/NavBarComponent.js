@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaBitcoin } from "react-icons/fa";
 import { Nav, Icon, Title, Links, List, ListItem } from "./styled";
@@ -6,6 +6,12 @@ import { Nav, Icon, Title, Links, List, ListItem } from "./styled";
 const navBarComponent = () => {
   const [signIn, setSignIn] = useState(false);
   const handleSignIn = () => setSignIn(!signIn);
+
+useEffect(() => {
+  if (window.location.href !== "http://localhost:3000/") {
+    setSignIn(true)
+  }
+}, [signIn])
 
   return (
     <Nav>
@@ -17,10 +23,7 @@ const navBarComponent = () => {
       <Title href="/">Coin Guide</Title>
       <Links>
         <List>
-          {signIn && <ListItem>Profile</ListItem>}
-          <ListItem onClick={handleSignIn}>
-            {!signIn ? "Sign In" : "Sign Out"}
-          </ListItem>
+          {signIn && <ListItem><Link href="/">Return</Link></ListItem>}
         </List>
       </Links>
     </Nav>
