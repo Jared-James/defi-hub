@@ -16,16 +16,22 @@ const InnerContainer = styled.div`
   margin: 1rem auto;
   max-width: 800px;
   background: #F8F8F8;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 const HeadlineContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+
 `;
 
 const CoinInformation = styled.div`
-  margin: 0 1rem;
+  margin: 0 2rem;
   padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+
 `;
 
 const Title = styled.div`
