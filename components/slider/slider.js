@@ -23,8 +23,8 @@ export default function SimpleSlider(props) {
   return (
     <div className={styles.slider}>
       <Slider {...settings}>
-        {props.filteredCoins.map((symbol) => (
-          <>
+        {props.filteredCoins.map((symbol, idx) => (
+          <div key={idx}>
             <h3>
               {symbol.symbol.toUpperCase()}
               {symbol.price_change_percentage_24h < 0 ? (
@@ -37,7 +37,7 @@ export default function SimpleSlider(props) {
                 </p>
               )}
             </h3>
-          </>
+          </div>
         ))}
       </Slider>
     </div>

@@ -23,7 +23,6 @@ const FetchChartComponent = ({ id }) => {
 
   useEffect(async () => {
 
-
     isLoading(true);
 
     const res = await fetch(

@@ -4,7 +4,7 @@ import SearchBar from "../components/SearchBar/SearchBar";
 import Layout from "../components/layout/Layout";
 import SimpleSlider from "../components/slider/slider";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Home({ filteredCoins }) {
   const [search, setSearch] = useState("");
@@ -20,7 +20,7 @@ export default function Home({ filteredCoins }) {
 
   return (
     <Layout>
-      <SimpleSlider filteredCoins={filteredCoins}/>
+      <SimpleSlider filteredCoins={filteredCoins} />
       <SearchBar type="text" placeholder="search..." onChange={handleChange} />
       <FilteredCoins filteredCoins={allCoins} />
     </Layout>

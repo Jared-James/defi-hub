@@ -10,6 +10,8 @@
   "dependencies": {
     "chart.js": "^3.2.1",
     "chartjs-adapter-moment": "^1.0.0",
+    "highcharts": "^9.1.2",
+    "highcharts-react-official": "^3.0.0",
     "moment": "^2.29.1",
     "next": "^10.2.3",
     "numeral": "^2.0.6",
