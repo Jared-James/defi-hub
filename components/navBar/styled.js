@@ -8,10 +8,9 @@ export const Nav = styled.div`
   justify-content: flex-start;
   align-items: center;
   height: 4rem;
-  border-bottom: 0.5px solid #000;
-  background: #000046;
-  background: -webkit-linear-gradient(to right, #1cb5e0, #000046);
-  background: linear-gradient(to right, #1cb5e0, #000046);
+
+  background: #F8F8F8;
+
 
 `;
 

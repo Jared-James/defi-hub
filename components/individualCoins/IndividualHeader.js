@@ -5,18 +5,19 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   padding: 1rem 0;
-  margin: 2rem 0;
-
+  margin: 0rem 0;
+  background: #fff;
 `;
 
 const InnerContainer = styled.div`
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+
   display: flex;
   justify-content: space-between;
   width: 900px;
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: 2rem;
-  background: #f8f8ff;
+  background: #F8F8F8;
 `;
 
 const CoinInformationLogo = styled.div`

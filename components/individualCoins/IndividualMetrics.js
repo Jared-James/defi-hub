@@ -4,28 +4,34 @@ import numeral from "numeral";
 
 const Container = styled.div`
   width: 100%;
-
+  background: #fff;
 `;
 
 const MetricContainer = styled.div`
   display: flex;
   align-items: center;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  flex-wrap: wrap;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  gap: 1rem;
   margin: 1rem auto;
   max-width: 800px;
-  background: #f8f8ff;
+  background: #F8F8F8;
+
+
+  flex-wrap: wrap;
+  
 `;
 
 const Metric = styled.div`
-  margin: 1rem 1rem;
+
+  margin: 1.5rem 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   padding: 1rem;
   background: #fff;
+
 `;
 
 const Title = styled.div`
-margin-bottom: 0.3rem;
+  margin-bottom: 1rem;
 `;
 
 const ApiResponse = styled.div``;
@@ -68,6 +74,12 @@ const IndividualMetrics = ({ coin }) => {
         <Metric>
           <Title>RETURNS (24HR)</Title>
           <ApiResponse>{`${coin.market_data.price_change_percentage_24h_in_currency.nzd.toFixed(
+            2
+          )}%`}</ApiResponse>
+        </Metric>
+        <Metric>
+          <Title>RETURNS (YTD)</Title>
+          <ApiResponse>{`${coin.market_data.price_change_percentage_1y_in_currency.nzd.toFixed(
             2
           )}%`}</ApiResponse>
         </Metric>

@@ -4,18 +4,18 @@ import numeral from "numeral";
 
 const Container = styled.div`
   width: 100%;
-  
+  background-color: #fff;
+  padding: 0.2rem;
 `;
 
 const InnerContainer = styled.div`
   display: flex;
   align-items: center;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    flex-wrap: wrap;
-  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  flex-wrap: wrap;
+  margin: 1rem auto;
   max-width: 800px;
-  background: #f8f8ff;
-
+  background: #F8F8F8;
 `;
 
 const HeadlineContainer = styled.div`

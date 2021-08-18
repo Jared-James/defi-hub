@@ -3,83 +3,95 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import HighchartsExporting from 'highcharts/modules/exporting';
+import HighchartsExporting from "highcharts/modules/exporting";
+import moment from "moment";
+
 const Container = styled.div`
   width: 100%;
+  background: #fff;
 `;
 
 const ChartContainer = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   flex-wrap: wrap;
   margin: 1rem auto;
   max-width: 800px;
-  background: #f8f8ff;
+  background: #F8F8F8;
+  padding: 2rem;
 `;
 
+const Chart = styled.div`
+width: 100%;
+`
+
 const IndividualChart = ({ coin }) => {
-  const [priceData, setPriceData] = useState([]);
-  const [btcId, setId] = useState("");
   const { id } = coin;
-
-  useEffect(() => {
-    const url = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=nzd&days=30&interval=daily`;
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        const json = await response.json();
-        setPriceData(json.prices);
-        setId(id)
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-
-    fetchData();
-  }, [btcId]);
-
-  const withDataLabels = {
+  const [chartOptions, setChartOptions] = useState({
     chart: {
-        type: 'line'
+      type: "line",
     },
     title: {
-        text: 'Monthly Average Temperature'
-    },
-    subtitle: {
-        text: 'Source: WorldClimate.com'
+      text: `${id} price`.toUpperCase(),
     },
     xAxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      type: "datetime",
+      title: {
+        text: "Date",
+      },
     },
     yAxis: {
-        title: {
-            text: 'Time'
-        }
+      title: {
+        text: `price`.toUpperCase(),
+      },
     },
+    series: [
+      {
+        name: `${id}`,
+        data: [],
+      },
+    ],
     plotOptions: {
-        line: {
-            dataLabels: {
-                enabled: true
-            },
-            enableMouseTracking: false
-        }
+      series: {
+        label: {
+          connectorAllowed: false,
+        },
+        pointStart: 2010,
+      },
     },
-    series: [{
-        name: 'Tokyo',
-        data: priceData.forEach(item => item[1].toFixed(2))
-    }]
-};
+  });
 
-  if (typeof Highcharts === 'object') {
-    HighchartsExporting(Highcharts)
-}
+  const fetchData = async () => {
+    const url = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=nzd&days=180&interval=hourly`;
+    const response = await fetch(url);
+    const JSON = await response.json();
+
+    const mappedJSON = JSON.prices.map((item) => {
+      const styledPrice = item[1].toFixed(2);
+      const Time = item[0];
+      return [Time, Number(styledPrice)];
+    });
+    setChartOptions({
+      series: [{ data: [...mappedJSON] }],
+    });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (typeof Highcharts === "object") {
+    HighchartsExporting(Highcharts);
+  }
 
   return (
     <Container>
       <ChartContainer>
-        <HighchartsReact highcharts={Highcharts} options={withDataLabels} />
+        <Chart>
+          <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+        </Chart>
       </ChartContainer>
     </Container>
   );
@@ -91,7 +103,7 @@ export async function getServerSideProps(context) {
   const { id } = context.query;
 
   const res = await fetch(
-    `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=nzd&days=14`
+    `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=nzd&days=180&interval=hourly`
   );
   const data = await res.json();
 
