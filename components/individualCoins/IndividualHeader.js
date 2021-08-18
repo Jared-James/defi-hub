@@ -6,7 +6,13 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   padding: 1rem 0;
+`;
+
+const InnerContainer = styled.div`
+  display: flex;
   justify-content: space-between;
+  width: 900px;
+  margin: 0 auto;
 `;
 
 const CoinInformationLogo = styled.div`
@@ -26,6 +32,7 @@ const CoinInformationSymbol = styled.div`
 const LeftSide = styled.div`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 const RightSide = styled.div`
@@ -34,6 +41,7 @@ const RightSide = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0 2rem;
+  flex-wrap: wrap;
 `;
 
 const CoinInformationGenesis = styled.p`
@@ -47,24 +55,26 @@ const CoinInformationMarketRank = styled.p`
 const IndividualHeader = ({ coin }) => {
   return (
     <Container>
-      <LeftSide>
-        <CoinInformationLogo>
-          <img src={coin.image.small} />
-        </CoinInformationLogo>
-        <CoinInformationName>{coin.name.toUpperCase()}</CoinInformationName>
-        <CoinInformationSymbol>
-          {coin.symbol.toUpperCase()}
-        </CoinInformationSymbol>
-      </LeftSide>
+      <InnerContainer>
+        <LeftSide>
+          <CoinInformationLogo>
+            <img src={coin.image.small} />
+          </CoinInformationLogo>
+          <CoinInformationName>{coin.name.toUpperCase()}</CoinInformationName>
+          <CoinInformationSymbol>
+            {coin.symbol.toUpperCase()}
+          </CoinInformationSymbol>
+        </LeftSide>
 
-      <RightSide>
-        <CoinInformationGenesis>
-          GENESIS DATE {coin.genesis_date}
-        </CoinInformationGenesis>
-        <CoinInformationMarketRank>
-          MARKET CAP RANK: {coin.market_cap_rank}
-        </CoinInformationMarketRank>
-      </RightSide>
+        <RightSide>
+          <CoinInformationGenesis>
+            GENESIS DATE {coin.genesis_date}
+          </CoinInformationGenesis>
+          <CoinInformationMarketRank>
+            MARKET CAP RANK: {coin.market_cap_rank}
+          </CoinInformationMarketRank>
+        </RightSide>
+      </InnerContainer>
     </Container>
   );
 };

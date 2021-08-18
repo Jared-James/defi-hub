@@ -141,13 +141,12 @@ export default function FilteredCoins({ filteredCoins }) {
           <h4 className={styles.hidden}>Last Price</h4>
           <div className={styles.sort_title}>
             <div className={styles.sort_arrow}>
-              <FaArrowUp onClick={sortByPriceASC}
-                 className={styles.pointer}
-              />
+              <FaArrowUp onClick={sortByPriceASC} className={styles.pointer} />
             </div>
             <div className={styles.sort_arrow}>
-              <FaArrowDown onClick={sortByPriceDSC}
-                 className={styles.pointer}
+              <FaArrowDown
+                onClick={sortByPriceDSC}
+                className={styles.pointer}
               />
             </div>
           </div>
