@@ -1,10 +1,12 @@
 .red {
   color: #f00606;
   grid-area: coin_percent;
+  cursor: pointer;
 }
 .green {
   color: #13c783;
   grid-area: coin_percent;
+  cursor: pointer;
 }
 
 .coin__row {
@@ -18,6 +20,7 @@
   padding: 1rem 0;
   justify-content: center;
   align-items: center;
+  cursor: default;
 }
 
 .coin__img {
@@ -25,25 +28,30 @@
   width: 25px;
   margin-left: 0.5rem;
   grid-area: coin_img;
+  cursor: pointer;
 }
 
 .coin__name {
   grid-area: coin_h1;
+  cursor: pointer;
 }
 
 .coin__symbol {
   text-transform: uppercase;
   grid-area: coin_symbol;
+  cursor: pointer;
 }
 
 .coin__price {
   grid-area: coin_price;
+  cursor: pointer;
 }
 
 .coin__container_percent {
   text-align: center;
   margin-right: 10%;
   grid-area: coin_percent;
+  cursor: pointer;
 }
 
 .coin__market {
@@ -180,6 +188,7 @@
   grid-area: sort_price;
   display: flex;
   flex-direction: column;
+  
 }
 
 .sort_arrow {

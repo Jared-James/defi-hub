@@ -14,6 +14,7 @@ const InnerContainer = styled.div`
     flex-wrap: wrap;
   margin: 0 auto;
   max-width: 800px;
+  background: #f8f8ff;
 
 `;
 

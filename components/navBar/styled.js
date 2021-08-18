@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled from "styled-components";
+import Link from "next/link";
 
 export const Nav = styled.div`
   display: flex;
@@ -12,7 +13,7 @@ export const Nav = styled.div`
   background: -webkit-linear-gradient(to right, #1cb5e0, #000046);
   background: linear-gradient(to right, #1cb5e0, #000046);
 
-`
+`;
 
 export const Icon = styled.div`
   margin-left: 1rem;
@@ -22,19 +23,18 @@ export const Icon = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-left: 5%;
-
+  cursor: pointer;
   @media (min-width: 768px) {
-      margin-left: 25%;
+    margin-left: 25%;
   }
-`
+`;
 
-export const Title = styled.div`
-display: flex;
+export const Title = styled(Link)`
+  display: flex;
   flex: 1;
   color: #fff;
-
-
-`
+  cursor: pointer;
+`;
 
 export const Links = styled.div`
   display: flex;
@@ -43,18 +43,18 @@ export const Links = styled.div`
   margin-right: 5%;
 
   @media (min-width: 768px) {
-      margin-right: 25%;
+    margin-right: 25%;
   }
-`
+`;
 
 export const List = styled.ul`
   display: flex;
   list-style-type: none;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const ListItem = styled.li`
   margin: 0rem 1rem;
   color: #fff;
-`
+`;

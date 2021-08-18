@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaBitcoin } from "react-icons/fa";
-
+import Link from "next/link";
 import { Nav, Icon, Title, Links, List, ListItem } from "./styled";
 
 const navBarComponent = () => {
@@ -10,9 +10,9 @@ const navBarComponent = () => {
   return (
     <Nav>
       <Icon>
-        <FaBitcoin />
+        <Link href="/"><FaBitcoin /></Link>
       </Icon>
-      <Title>Coin Guide</Title>
+      <Title href="/">Coin Guide</Title>
       <Links>
         <List>
           {signIn && <ListItem>Profile</ListItem>}

@@ -14,13 +14,19 @@ const MetricContainer = styled.div`
   flex-wrap: wrap;
   margin: 1rem auto;
   max-width: 800px;
+  background: #f8f8ff;
 `;
 
 const Metric = styled.div`
-  margin: 2rem 1rem;
+  margin: 1rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 1rem;
+  background: #fff;
 `;
 
-const Title = styled.div``;
+const Title = styled.div`
+margin-bottom: 0.3rem;
+`;
 
 const ApiResponse = styled.div``;
 

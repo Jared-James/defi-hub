@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-
   display: flex;
   width: 100%;
   padding: 1rem 0;
   margin: 2rem 0;
+
 `;
 
 const InnerContainer = styled.div`
@@ -16,6 +16,7 @@ const InnerContainer = styled.div`
   width: 900px;
   margin: 0 auto;
   padding: 2rem;
+  background: #f8f8ff;
 `;
 
 const CoinInformationLogo = styled.div`
