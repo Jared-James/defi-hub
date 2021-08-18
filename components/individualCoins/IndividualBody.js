@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import numeral from "numeral";
 
@@ -42,7 +42,19 @@ const ApiResponse = styled.div`
   font-size: 1.5rem;
 `;
 
+
+
 const IndividalBody = ({ coin }) => {
+  const [deltaColor, setColor] = useState('')
+
+useEffect(() => {
+  if (coin.market_data.price_change_percentage_24h_in_currency.nzd < 0) {
+    setColor('red')
+  } else {
+    setColor('green')
+  }
+}, [deltaColor])
+
   return (
     <Container>
       <InnerContainer>
@@ -55,7 +67,7 @@ const IndividalBody = ({ coin }) => {
           </CoinInformation>
           <CoinInformation>
             <Title>24 Hour % change:</Title>{" "}
-            <ApiResponse>{`${coin.market_data.price_change_percentage_24h_in_currency.nzd.toFixed(
+            <ApiResponse style={{color: `${deltaColor}`}}>{`${coin.market_data.price_change_percentage_24h_in_currency.nzd.toFixed(
               2
             )}%`}</ApiResponse>
           </CoinInformation>

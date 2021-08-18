@@ -7,23 +7,29 @@ const navBarComponent = () => {
   const [signIn, setSignIn] = useState(false);
   const handleSignIn = () => setSignIn(!signIn);
 
-useEffect(() => {
-  if (window.location.href !== "http://localhost:3000/") {
-    setSignIn(true)
-  }
-}, [signIn])
+  useEffect(() => {
+    if (window.location.href !== "http://localhost:3000/") {
+      setSignIn(true);
+    }
+  }, [signIn]);
 
   return (
     <Nav>
       <Icon>
         <Link href="/">
-          <div><FaBitcoin /></div>
+          <div>
+            <FaBitcoin />
+          </div>
         </Link>
       </Icon>
       <Title href="/">Coin Guide</Title>
       <Links>
         <List>
-          {signIn && <ListItem><Link href="/">Return</Link></ListItem>}
+          {signIn && (
+            <ListItem>
+              <Link href="/">Return</Link>
+            </ListItem>
+          )}
         </List>
       </Links>
     </Nav>

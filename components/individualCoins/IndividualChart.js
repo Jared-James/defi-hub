@@ -19,13 +19,13 @@ const ChartContainer = styled.div`
   flex-wrap: wrap;
   margin: 1rem auto;
   max-width: 800px;
-  background: #F8F8F8;
+  background: #f8f8f8;
   padding: 2rem;
 `;
 
 const Chart = styled.div`
-width: 100%;
-`
+  width: 100%;
+`;
 
 const IndividualChart = ({ coin }) => {
   const { id } = coin;

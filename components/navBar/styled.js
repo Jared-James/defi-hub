@@ -28,8 +28,7 @@ export const Title = styled(Link)`
   flex: 1;
   color: #000;
   cursor: pointer;
-  font-weight: 'bold';
-
+  font-weight: "bold";
 `;
 
 export const Links = styled.div`
@@ -53,4 +52,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   margin: 0rem 1rem;
   color: #fff;
+  border: 1.3px solid #f8f8f8;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
 `;

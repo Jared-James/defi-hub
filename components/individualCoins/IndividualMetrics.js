@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import numeral from "numeral";
 
@@ -14,20 +14,16 @@ const MetricContainer = styled.div`
   gap: 1rem;
   margin: 1rem auto;
   max-width: 800px;
-  background: #F8F8F8;
-
+  background: #f8f8f8;
 
   flex-wrap: wrap;
-  
 `;
 
 const Metric = styled.div`
-
   margin: 1.5rem 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   padding: 1rem;
   background: #fff;
-
 `;
 
 const Title = styled.div`
@@ -37,6 +33,14 @@ const Title = styled.div`
 const ApiResponse = styled.div``;
 
 const IndividualMetrics = ({ coin }) => {
+  const [deltaColor, setColor] = useState("");
+  useEffect(() => {
+    if (coin.market_data.price_change_percentage_24h_in_currency.nzd < 0) {
+      setColor("red");
+    } else {
+      setColor("green");
+    }
+  }, [deltaColor]);
   return (
     <Container>
       <MetricContainer>
@@ -72,8 +76,8 @@ const IndividualMetrics = ({ coin }) => {
           </ApiResponse>
         </Metric>
         <Metric>
-          <Title>RETURNS (24HR)</Title>
-          <ApiResponse>{`${coin.market_data.price_change_percentage_24h_in_currency.nzd.toFixed(
+          <Title >RETURNS (24HR)</Title>
+          <ApiResponse style={{color: `${deltaColor}`}}>{`${coin.market_data.price_change_percentage_24h_in_currency.nzd.toFixed(
             2
           )}%`}</ApiResponse>
         </Metric>
@@ -83,7 +87,6 @@ const IndividualMetrics = ({ coin }) => {
             2
           )}%`}</ApiResponse>
         </Metric>
-
       </MetricContainer>
     </Container>
   );
