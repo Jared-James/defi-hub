@@ -16,12 +16,12 @@ const navBarComponent = () => {
     <Nav>
       <Icon>
         <Link href="/">
-          <div>
+          <div >
             <FaBitcoin />
           </div>
         </Link>
       </Icon>
-      <Title href="/">Coin Guide</Title>
+      <Title  href="/"><h3>Coin Guide</h3></Title>
       <Links>
         <List>
           {signIn && (

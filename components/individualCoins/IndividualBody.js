@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import numeral from "numeral";
 
+
 const Container = styled.div`
   width: 100%;
   background-color: #fff;
@@ -33,11 +34,14 @@ const CoinInformation = styled.div`
 `;
 
 const Title = styled.div`
+
   font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
 `;
 
 const ApiResponse = styled.div`
   font-size: 1.5rem;
+  font-family: 'Raleway', sans-serif;
 `;
 
 const IndividalBody = ({ coin }) => {
@@ -55,13 +59,7 @@ const IndividalBody = ({ coin }) => {
     <Container>
       <InnerContainer>
         <HeadlineContainer>
-          <CoinInformation>
-            <Title>Current Price:</Title>{" "}
-            <ApiResponse>
-              {numeral(coin.market_data.current_price.nzd).format("$0,0.00")}
-            </ApiResponse>
-          </CoinInformation>
-          <CoinInformation>
+        <CoinInformation>
             <Title>24 Hour % change:</Title>{" "}
             <ApiResponse
               style={{ color: `${deltaColor}` }}
@@ -69,6 +67,13 @@ const IndividalBody = ({ coin }) => {
               2
             )}%`}</ApiResponse>
           </CoinInformation>
+          <CoinInformation>
+            <Title>Current Price:</Title>{" "}
+            <ApiResponse>
+              {numeral(coin.market_data.current_price.nzd).format("$0,0.00")}
+            </ApiResponse>
+          </CoinInformation>
+
           <CoinInformation>
             <Title>Market Cap:</Title>{" "}
             <ApiResponse>

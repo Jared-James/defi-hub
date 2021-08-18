@@ -9,28 +9,44 @@ const Container = styled.div`
 
 const MetricContainer = styled.div`
   display: flex;
+
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  gap: 1rem;
   margin: 1rem auto;
-  max-width: 800px;
   background: #f8f8f8;
-
   flex-wrap: wrap;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    max-width: 800px;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 `;
 
 const Metric = styled.div`
-  margin: 1.5rem 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  padding: 1rem;
   background: #fff;
+  width: 100%;
+  padding: 1rem;
+  margin: 0.2rem auto;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    width: auto;
+    padding: 1rem;
+    margin: 1.5rem 0.5rem;
+  }
 `;
 
 const Title = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
+  font-family: 'Roboto', sans-serif;
 `;
 
-const ApiResponse = styled.div``;
+const ApiResponse = styled.div`
+font-family: 'Raleway', sans-serif;
+font-weight: 100;
+`;
 
 const IndividualMetrics = ({ coin }) => {
   const [deltaColor, setColor] = useState("");

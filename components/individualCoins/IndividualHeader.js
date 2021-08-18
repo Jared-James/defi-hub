@@ -28,11 +28,13 @@ const CoinInformationLogo = styled.div`
 const CoinInformationName = styled.h3`
   font-size: 2rem;
   margin: 0 1rem;
+  font-family: 'Raleway', sans-serif;
 `;
 
 const CoinInformationSymbol = styled.div`
   font-size: 1.5rem;
   margin: 0 1rem;
+  font-family: 'Raleway', sans-serif;
 `;
 
 const LeftSide = styled.div`
@@ -53,10 +55,12 @@ const RightSide = styled.div`
 const CoinInformationGenesis = styled.p`
   font-size: 0.9rem;
   margin-bottom: 1rem;
+  font-family: 'Roboto', sans-serif;
 `;
 
 const CoinInformationMarketRank = styled.p`
   font-size: 0.9rem;
+  font-family: 'Roboto', sans-serif;
 `;
 
 const IndividualHeader = ({ coin }) => {
