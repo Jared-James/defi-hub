@@ -3,14 +3,17 @@ import styled from "styled-components";
 import numeral from "numeral";
 
 const Container = styled.div`
-  display: flex;
-
+  width: 100%;
+  
 `;
 
 const InnerContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    flex-wrap: wrap;
   margin: 0 auto;
+  max-width: 800px;
 
 `;
 

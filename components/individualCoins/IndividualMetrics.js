@@ -4,16 +4,15 @@ import numeral from "numeral";
 
 const Container = styled.div`
   width: 100%;
-  background-color: green;
+
 `;
 
 const MetricContainer = styled.div`
-  background: grey;
   display: flex;
   align-items: center;
-
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 1rem auto;
   max-width: 800px;
 `;
 

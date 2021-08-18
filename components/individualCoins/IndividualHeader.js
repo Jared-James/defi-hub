@@ -2,17 +2,20 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  background: pink;
+
   display: flex;
   width: 100%;
   padding: 1rem 0;
+  margin: 2rem 0;
 `;
 
 const InnerContainer = styled.div`
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   display: flex;
   justify-content: space-between;
   width: 900px;
   margin: 0 auto;
+  padding: 2rem;
 `;
 
 const CoinInformationLogo = styled.div`
