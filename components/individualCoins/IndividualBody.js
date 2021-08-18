@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import numeral from "numeral";
 
@@ -15,7 +15,7 @@ const InnerContainer = styled.div`
   flex-wrap: wrap;
   margin: 1rem auto;
   max-width: 800px;
-  background: #F8F8F8;
+  background: #f8f8f8;
   justify-content: flex-start;
   align-items: center;
 `;
@@ -23,7 +23,6 @@ const InnerContainer = styled.div`
 const HeadlineContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-
 `;
 
 const CoinInformation = styled.div`
@@ -31,7 +30,6 @@ const CoinInformation = styled.div`
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
-
 `;
 
 const Title = styled.div`
@@ -42,18 +40,16 @@ const ApiResponse = styled.div`
   font-size: 1.5rem;
 `;
 
-
-
 const IndividalBody = ({ coin }) => {
-  const [deltaColor, setColor] = useState('')
+  const [deltaColor, setColor] = useState("");
 
-useEffect(() => {
-  if (coin.market_data.price_change_percentage_24h_in_currency.nzd < 0) {
-    setColor('red')
-  } else {
-    setColor('green')
-  }
-}, [deltaColor])
+  useEffect(() => {
+    if (coin.market_data.price_change_percentage_24h_in_currency.nzd < 0) {
+      setColor("red");
+    } else {
+      setColor("green");
+    }
+  }, [deltaColor]);
 
   return (
     <Container>
@@ -67,7 +63,9 @@ useEffect(() => {
           </CoinInformation>
           <CoinInformation>
             <Title>24 Hour % change:</Title>{" "}
-            <ApiResponse style={{color: `${deltaColor}`}}>{`${coin.market_data.price_change_percentage_24h_in_currency.nzd.toFixed(
+            <ApiResponse
+              style={{ color: `${deltaColor}` }}
+            >{`${coin.market_data.price_change_percentage_24h_in_currency.nzd.toFixed(
               2
             )}%`}</ApiResponse>
           </CoinInformation>

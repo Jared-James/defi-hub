@@ -58,15 +58,15 @@ export default function FilteredCoins({ filteredCoins }) {
   const handleRefresh = () => setSorted("marketCap");
 
   useEffect(() => {
-   if (window.location.href === "http://localhost:3000/") {
-    setTimeout(() => {
-      if (changeColor === "green") {
-        setChangeColor("red");
-      } else if (changeColor === "red") {
-        setChangeColor("green");
-      }
-    }, 1000);
-   }
+    if (window.location.href === "http://localhost:3000/") {
+      setTimeout(() => {
+        if (changeColor === "green") {
+          setChangeColor("red");
+        } else if (changeColor === "red") {
+          setChangeColor("green");
+        }
+      }, 1000);
+    }
   }, [changeColor]);
 
   let iconStyles = { fill: "red" };

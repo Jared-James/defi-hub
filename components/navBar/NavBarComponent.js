@@ -5,7 +5,6 @@ import { Nav, Icon, Title, Links, List, ListItem } from "./styled";
 
 const navBarComponent = () => {
   const [signIn, setSignIn] = useState(false);
-  const handleSignIn = () => setSignIn(!signIn);
 
   useEffect(() => {
     if (window.location.href !== "http://localhost:3000/") {

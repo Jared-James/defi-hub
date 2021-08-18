@@ -10,14 +10,15 @@ const Container = styled.div`
 `;
 
 const InnerContainer = styled.div`
-box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+    rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
 
   display: flex;
   justify-content: space-between;
   width: 900px;
   margin: 1rem auto;
   padding: 2rem;
-  background: #F8F8F8;
+  background: #f8f8f8;
 `;
 
 const CoinInformationLogo = styled.div`

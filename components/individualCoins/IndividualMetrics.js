@@ -76,8 +76,10 @@ const IndividualMetrics = ({ coin }) => {
           </ApiResponse>
         </Metric>
         <Metric>
-          <Title >RETURNS (24HR)</Title>
-          <ApiResponse style={{color: `${deltaColor}`}}>{`${coin.market_data.price_change_percentage_24h_in_currency.nzd.toFixed(
+          <Title>RETURNS (24HR)</Title>
+          <ApiResponse
+            style={{ color: `${deltaColor}` }}
+          >{`${coin.market_data.price_change_percentage_24h_in_currency.nzd.toFixed(
             2
           )}%`}</ApiResponse>
         </Metric>

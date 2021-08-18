@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
 import styles from "./Slider.module.css";
 import { useMediaQuery } from "react-responsive";
