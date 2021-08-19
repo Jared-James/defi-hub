@@ -6,7 +6,8 @@ export const Nav = styled.div`
   justify-content: flex-start;
   align-items: center;
   height: 4rem;
-  background: #808080;
+  background: #f8f8f8;
+
 `;
 
 export const Icon = styled.div`
@@ -17,6 +18,7 @@ export const Icon = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-left: 5%;
+
   cursor: pointer;
   @media (min-width: 768px) {
     margin-left: 25%;
@@ -51,8 +53,8 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   margin: 0rem 1rem;
-  color: #fff;
-  border: 1.3px solid #f8f8f8;
+  color: #000;
+  border: 1.3px solid #000;
   padding: 0.5rem 1rem;
   border-radius: 0.4rem;
 `;
