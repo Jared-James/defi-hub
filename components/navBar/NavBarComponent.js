@@ -7,7 +7,7 @@ const navBarComponent = () => {
   const [signIn, setSignIn] = useState(false);
 
   useEffect(() => {
-    if (window.location.href !== "http://localhost:3000/") {
+    if (window.location.href !== "http://localhost:3000/" || window.location.href !== "https://jared-crypto.netlify.app/") {
       setSignIn(true);
     }
   }, [signIn]);
