@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FilteredCoins from "../components/CryptoCoins/FilteredCoins";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Layout from "../components/layout/Layout";
