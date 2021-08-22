@@ -5,6 +5,8 @@ import Layout from "../components/layout/Layout";
 import SimpleSlider from "../components/slider/slider";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { hotjar } from 'react-hotjar';
+
 
 export default function Home({ filteredCoins }) {
   const [search, setSearch] = useState("");
@@ -17,6 +19,10 @@ export default function Home({ filteredCoins }) {
     e.preventDefault();
     setSearch(e.target.value.toLowerCase());
   };
+
+  useEffect(() => {
+    hotjar.initialize(2566228, 6);
+  }, [])
 
   return (
     <Layout>
