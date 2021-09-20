@@ -1,5 +1,5 @@
-import styles from "./Coins.module.css";
-import Link from "next/link";
+import styles from "./Coins.module.css"
+import Link from "next/link"
 
 const RenderCoins = ({
   name,
@@ -9,7 +9,7 @@ const RenderCoins = ({
   total_volume,
   market_cap,
   image,
-  price_change_percentage_24h,
+  price_change_percentage_24h
 }) => {
   return (
     <>
@@ -24,16 +24,16 @@ const RenderCoins = ({
               <p className={styles.coin__symbol}>{symbol}</p>
 
               <p className={styles.coin__price}>
-                ${parseFloat(current_price.toFixed(3)).toLocaleString()}
+                ${parseFloat(current_price?.toFixed(3)).toLocaleString()}
               </p>
 
               {price_change_percentage_24h < 0 ? (
                 <p className={(styles.coin__percent, styles.red)}>
-                  {price_change_percentage_24h.toFixed(2)}%
+                  {price_change_percentage_24h?.toFixed(2)}%
                 </p>
               ) : (
                 <p className={(styles.coin__percent, styles.green)}>
-                  {price_change_percentage_24h.toFixed(2)}%
+                  {price_change_percentage_24h?.toFixed(2)}%
                 </p>
               )}
 
@@ -48,7 +48,7 @@ const RenderCoins = ({
         </Link>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default RenderCoins;
+export default RenderCoins

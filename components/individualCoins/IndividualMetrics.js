@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import numeral from "numeral";
+import React, { useState, useEffect } from "react"
+import styled from "styled-components"
+import numeral from "numeral"
 
 const Container = styled.div`
   width: 100%;
   background: #fff;
-`;
+`
 
 const MetricContainer = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ const MetricContainer = styled.div`
     flex-wrap: wrap;
     gap: 1rem;
   }
-`;
+`
 
 const Metric = styled.div`
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -36,27 +36,27 @@ const Metric = styled.div`
     padding: 1rem;
     margin: 1.5rem 0.5rem;
   }
-`;
+`
 
 const Title = styled.div`
   margin-bottom: 1.1rem;
-  font-family: 'Roboto', sans-serif;
-`;
+  font-family: "Roboto", sans-serif;
+`
 
 const ApiResponse = styled.div`
-font-family: 'Raleway', sans-serif;
-font-weight: 100;
-`;
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+`
 
 const IndividualMetrics = ({ coin }) => {
-  const [deltaColor, setColor] = useState("");
+  const [deltaColor, setColor] = useState("")
   useEffect(() => {
     if (coin.market_data.price_change_percentage_24h_in_currency.nzd < 0) {
-      setColor("red");
+      setColor("red")
     } else {
-      setColor("green");
+      setColor("green")
     }
-  }, [deltaColor]);
+  }, [deltaColor])
   return (
     <Container>
       <MetricContainer>
@@ -95,19 +95,19 @@ const IndividualMetrics = ({ coin }) => {
           <Title>RETURNS (24HR)</Title>
           <ApiResponse
             style={{ color: `${deltaColor}` }}
-          >{`${coin.market_data.price_change_percentage_24h_in_currency.nzd.toFixed(
+          >{`${coin?.market_data?.price_change_percentage_24h_in_currency?.nzd?.toFixed(
             2
           )}%`}</ApiResponse>
         </Metric>
         <Metric>
           <Title>RETURNS (YTD)</Title>
-          <ApiResponse>{`${coin.market_data.price_change_percentage_1y_in_currency.nzd.toFixed(
+          <ApiResponse>{`${coin?.market_data?.price_change_percentage_1y_in_currency.nzd?.toFixed(
             2
           )}%`}</ApiResponse>
         </Metric>
       </MetricContainer>
     </Container>
-  );
-};
+  )
+}
 
-export default IndividualMetrics;
+export default IndividualMetrics

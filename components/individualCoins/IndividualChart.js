@@ -84,7 +84,7 @@ const IndividualChart = ({ coin }) => {
       value: 12345
     })
     const mappedJSON = JSON.prices.map((item) => {
-      const styledPrice = item[1].toFixed(2)
+      const styledPrice = item[1]?.toFixed(2)
       const Time = item[0]
       return [Time, Number(styledPrice)]
     })

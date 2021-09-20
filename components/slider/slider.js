@@ -1,14 +1,14 @@
-import React from "react";
-import Slider from "react-slick";
-import styles from "./Slider.module.css";
-import { useMediaQuery } from "react-responsive";
+import React from "react"
+import Slider from "react-slick"
+import styles from "./Slider.module.css"
+import { useMediaQuery } from "react-responsive"
 
 export default function SimpleSlider(props) {
   const isDesktop = useMediaQuery({
-    query: "(min-device-width: 1024px)",
-  });
-  const isTablet = useMediaQuery({ query: "(min-device-width: 600px)" });
-  const slidesToShow = isDesktop ? 5 : isTablet ? 3 : 3;
+    query: "(min-device-width: 1024px)"
+  })
+  const isTablet = useMediaQuery({ query: "(min-device-width: 600px)" })
+  const slidesToShow = isDesktop ? 5 : isTablet ? 3 : 3
 
   const settings = {
     dots: false,
@@ -17,8 +17,8 @@ export default function SimpleSlider(props) {
     autoplaySpeed: 1000,
     speed: 2000,
     slidesToShow: slidesToShow,
-    slidesToScroll: 1,
-  };
+    slidesToScroll: 1
+  }
 
   return (
     <div className={styles.slider}>
@@ -29,11 +29,11 @@ export default function SimpleSlider(props) {
               {symbol.symbol.toUpperCase()}
               {symbol.price_change_percentage_24h < 0 ? (
                 <p className={(styles.coin__percent, styles.red)}>
-                  {symbol.price_change_percentage_24h.toFixed(2)}%
+                  {symbol?.price_change_percentage_24h?.toFixed(2)}%
                 </p>
               ) : (
                 <p className={(styles.coin__percent, styles.green)}>
-                  {symbol.price_change_percentage_24h.toFixed(2)}%
+                  {symbol?.price_change_percentage_24h?.toFixed(2)}%
                 </p>
               )}
             </h3>
@@ -41,5 +41,5 @@ export default function SimpleSlider(props) {
         ))}
       </Slider>
     </div>
-  );
+  )
 }

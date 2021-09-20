@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import numeral from "numeral";
-
+import React, { useState, useEffect } from "react"
+import styled from "styled-components"
+import numeral from "numeral"
 
 const Container = styled.div`
   width: 100%;
   background-color: #fff;
   padding: 0.2rem;
-`;
+`
 
 const InnerContainer = styled.div`
   display: flex;
@@ -19,51 +18,50 @@ const InnerContainer = styled.div`
   background: #f8f8f8;
   justify-content: flex-start;
   align-items: center;
-`;
+`
 
 const HeadlineContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-`;
+`
 
 const CoinInformation = styled.div`
   margin: 0 2rem;
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
-`;
+`
 
 const Title = styled.div`
-
   font-size: 1rem;
-  font-family: 'Raleway', sans-serif;
-`;
+  font-family: "Raleway", sans-serif;
+`
 
 const ApiResponse = styled.div`
   font-size: 1.5rem;
-  font-family: 'Raleway', sans-serif;
-`;
+  font-family: "Raleway", sans-serif;
+`
 
 const IndividalBody = ({ coin }) => {
-  const [deltaColor, setColor] = useState("");
+  const [deltaColor, setColor] = useState("")
 
   useEffect(() => {
     if (coin.market_data.price_change_percentage_24h_in_currency.nzd < 0) {
-      setColor("red");
+      setColor("red")
     } else {
-      setColor("green");
+      setColor("green")
     }
-  }, [deltaColor]);
+  }, [deltaColor])
 
   return (
     <Container>
       <InnerContainer>
         <HeadlineContainer>
-        <CoinInformation>
+          <CoinInformation>
             <Title>24 Hour % change:</Title>{" "}
             <ApiResponse
               style={{ color: `${deltaColor}` }}
-            >{`${coin.market_data.price_change_percentage_24h_in_currency.nzd.toFixed(
+            >{`${coin?.market_data?.price_change_percentage_24h_in_currency?.nzd?.toFixed(
               2
             )}%`}</ApiResponse>
           </CoinInformation>
@@ -93,7 +91,7 @@ const IndividalBody = ({ coin }) => {
         </HeadlineContainer>
       </InnerContainer>
     </Container>
-  );
-};
+  )
+}
 
-export default IndividalBody;
+export default IndividalBody
