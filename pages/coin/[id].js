@@ -3,6 +3,7 @@ import IndividualHeader from "../../components/individualCoins/IndividualHeader"
 import IndividualBody from "../../components/individualCoins/IndividualBody"
 import IndividualMetrics from "../../components/individualCoins/IndividualMetrics"
 import IndividualChart from "../../components/individualCoins/IndividualChart"
+import * as gtag from "../../gtag"
 
 const Coin = ({ coin }) => {
   return (
@@ -21,17 +22,21 @@ export default Coin
 
 export async function getServerSideProps(context) {
   const { id } = context.query
-  const initTime = date.now()
+  const initTime = Date.now()
   const res = await fetch(`https://api.coingecko.com/api/v3/coins/${id}`)
-  const finalTime = initTime - date.now()
+  const finalTime = initTime - Date.now()
   gtag.event({
     action: "Time",
+    event_category: "this one is time",
+    event_label: "time tabel",
     value: finalTime
   })
 
   gtag.event({
     action: "second event",
-    value: 123
+    event_category: "this ons is just random",
+    event_label: "random label",
+    value: 12345
   })
   const data = await res.json()
 
