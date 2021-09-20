@@ -3,7 +3,6 @@ import IndividualHeader from "../../components/individualCoins/IndividualHeader"
 import IndividualBody from "../../components/individualCoins/IndividualBody"
 import IndividualMetrics from "../../components/individualCoins/IndividualMetrics"
 import IndividualChart from "../../components/individualCoins/IndividualChart"
-import * as gtag from "../../gtag"
 
 const Coin = ({ coin }) => {
   return (

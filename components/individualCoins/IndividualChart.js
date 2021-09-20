@@ -68,7 +68,7 @@ const IndividualChart = ({ coin }) => {
     const url = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=nzd&days=180&interval=hourly`
     const response = await fetch(url)
     const JSON = await response.json()
-    const finalTime = initTime - Date.now()
+    const finalTime = Date.now() - initTime
 
     gtag.event({
       action: "first event",
