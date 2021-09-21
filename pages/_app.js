@@ -3,10 +3,16 @@ import { useEffect } from "react"
 import { hotjar } from "react-hotjar"
 import Script from "next/script"
 import Head from "next/head"
+import ReactGA from "react-ga"
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     hotjar.initialize(2566228, 6)
+  }, [])
+
+  useEffect(() => {
+    ReactGA.initialize("G-K7FVL440HM")
+    ReactGA.pageview(window.location.pathname + window.location.search)
   }, [])
   return (
     <>
@@ -24,9 +30,6 @@ function MyApp({ Component, pageProps }) {
             gtag('js', new Date());
             gtag('config', 'G-K7FVL440HM', {
               page_path: window.location.pathname,
-              'custom_map': {
-                'dimensionX': 'clientId'
-              }
             });
           `
           }}

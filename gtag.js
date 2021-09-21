@@ -12,10 +12,18 @@ export const event = ({ action, category, label, value, USER_ID }) => {
   }
 }
 
-export const config = ({ USER_ID, action }) => {
+export const config = ({ USER_ID }) => {
   if (typeof window !== "undefined") {
-    window.gtag("config", action, {
+    window.gtag("config", USER_ID, {
       user_id: USER_ID
+    })
+  }
+}
+
+export const set = ({ action, user }) => {
+  if (typeof window !== "undefined") {
+    window.gtag("set", action, {
+      user_id: user
     })
   }
 }

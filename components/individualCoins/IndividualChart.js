@@ -70,15 +70,11 @@ const IndividualChart = ({ coin }) => {
     const JSON = await response.json()
     const finalTime = Date.now() - initTime
 
-    gtag.config({
-      action: "GA_MEASUREMENT_ID",
-      USER_ID: "xoxoxoxoxooxoxoxoxo"
-    })
-
     gtag.event({
-      action: "CHICKEN HUNTER",
+      action: "FISH HUNTER",
       category: "this ons is just random",
       label: "random label",
+      USER_ID: "BOB UR UNCLE",
       value: finalTime
     })
     const mappedJSON = JSON.prices.map((item) => {
