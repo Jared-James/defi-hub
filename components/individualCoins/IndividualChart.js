@@ -75,7 +75,7 @@ const IndividualChart = ({ coin }) => {
     })
 
     gtag.event({
-      action: "third event",
+      action: "CHICKEN HUNTER",
       category: "this ons is just random",
       label: "random label",
       value: finalTime
