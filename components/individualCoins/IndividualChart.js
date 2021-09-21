@@ -63,12 +63,6 @@ const IndividualChart = ({ coin }) => {
     }
   })
 
-  const userID = "xO231312xo3141412312312"
-  const exitMultiplier = "3x45"
-
-  const obj = { userId: userID, Multiplier: exitMultiplier }
-  const myJSON = JSON.stringify(obj)
-
   const fetchData = async () => {
     const initTime = Date.now()
     const url = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=nzd&days=180&interval=hourly`
@@ -76,27 +70,12 @@ const IndividualChart = ({ coin }) => {
     const JSON = await response.json()
     const finalTime = Date.now() - initTime
 
-    console.log(myJSON)
-
     gtag.event({
-      action: "BASELINE VALUE",
-      event_category: "this one is time",
-      event_label: "time tabel",
+      action: "third event",
+      category: "this ons is just random",
+      label: "random label",
+      userId: "xoxoxoxoxooxoxoxoxo",
       value: finalTime
-    })
-
-    gtag.event({
-      action: "first event",
-      event_category: "this one is time",
-      event_label: "time tabel",
-      value: myJSON
-    })
-
-    gtag.event({
-      action: "second event",
-      event_category: "this ons is just random",
-      event_label: "random label",
-      value: 12345
     })
     const mappedJSON = JSON.prices.map((item) => {
       const styledPrice = item[1]?.toFixed(2)

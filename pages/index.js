@@ -17,13 +17,6 @@ export default function Home({ filteredCoins }) {
   const handleChange = (e) => {
     e.preventDefault()
     setSearch(e.target.value.toLowerCase())
-
-    gtag.event({
-      action: "third event",
-      event_category: "this ons is just random",
-      event_label: "random label",
-      value: 12345
-    })
   }
 
   return (
