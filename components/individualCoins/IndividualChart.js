@@ -63,6 +63,9 @@ const IndividualChart = ({ coin }) => {
     }
   })
 
+  const obj = { name: "John", age: 30, city: "New York" }
+  const myJSON = JSON.stringify(obj)
+
   const fetchData = async () => {
     const initTime = Date.now()
     const url = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=nzd&days=180&interval=hourly`
@@ -70,12 +73,7 @@ const IndividualChart = ({ coin }) => {
     const JSON = await response.json()
     const finalTime = Date.now() - initTime
 
-    let value = {
-      name: "this is ur client",
-      time: finalTime
-    }
-
-    let result = JSON.stringify(value)
+    console.log(myJSON)
 
     gtag.event({
       action: "BASELINE VALUE",
@@ -88,14 +86,7 @@ const IndividualChart = ({ coin }) => {
       action: "first event",
       event_category: "this one is time",
       event_label: "time tabel",
-      value: JSON.stringify(value)
-    })
-
-    gtag.event({
-      action: "json earlier event",
-      event_category: "this one is time",
-      event_label: "time tabel",
-      value: result
+      value: myJSON
     })
 
     gtag.event({

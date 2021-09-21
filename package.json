@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.15.5",
+    "JSON2": "^0.1.0",
     "chart.js": "^3.5.1",
     "chartjs-adapter-moment": "^1.0.0",
     "highcharts": "^9.2.2",
