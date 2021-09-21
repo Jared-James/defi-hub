@@ -71,7 +71,6 @@ const IndividualChart = ({ coin }) => {
     const finalTime = Date.now() - initTime
 
     gtag.config({
-      action: "FISH HUNTER",
       USER_ID: "BOB UR UNCLE"
     })
 
