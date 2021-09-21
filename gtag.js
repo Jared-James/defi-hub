@@ -1,12 +1,12 @@
 export const GA_TRACKING_ID = "G-K7FVL440HM"
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
-export const event = ({ action, category, label, value, userId }) => {
+export const event = ({ action, category, label, value, USER_ID }) => {
   if (typeof window !== "undefined") {
     window.gtag("event", action, {
       event_category: category,
       event_label: label,
-      user_id: userId,
+      user_id: USER_ID,
       value
     })
   }

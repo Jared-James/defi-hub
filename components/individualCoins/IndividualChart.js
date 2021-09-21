@@ -74,7 +74,7 @@ const IndividualChart = ({ coin }) => {
       action: "third event",
       category: "this ons is just random",
       label: "random label",
-      userId: "xoxoxoxoxooxoxoxoxo",
+      USER_ID: "xoxoxoxoxooxoxoxoxo",
       value: finalTime
     })
     const mappedJSON = JSON.prices.map((item) => {
