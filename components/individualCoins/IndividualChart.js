@@ -71,6 +71,7 @@ const IndividualChart = ({ coin }) => {
     const finalTime = Date.now() - initTime
 
     gtag.config({
+      action: "GA_MEASUREMENT_ID",
       USER_ID: "xoxoxoxoxooxoxoxoxo"
     })
 
