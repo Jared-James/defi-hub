@@ -63,7 +63,10 @@ const IndividualChart = ({ coin }) => {
     }
   })
 
-  const obj = { name: "John", age: 30, city: "New York" }
+  const userID = "xO231312xo3141412312312"
+  const exitMultiplier = "3x45"
+
+  const obj = { userId: userID, Multiplier: exitMultiplier }
   const myJSON = JSON.stringify(obj)
 
   const fetchData = async () => {
