@@ -12,9 +12,9 @@ export const event = ({ action, category, label, value, USER_ID }) => {
   }
 }
 
-export const config = ({ USER_ID }) => {
+export const config = ({ action, USER_ID }) => {
   if (typeof window !== "undefined") {
-    window.gtag("config", USER_ID, {
+    window.gtag("config", action, {
       user_id: USER_ID
     })
   }
