@@ -83,6 +83,17 @@ const IndividualChart = ({ coin }) => {
     })
 
     gtag.event({
+      action: "first event",
+      event_category: "this one is time",
+      event_label: "time tabel",
+      method: "new data here",
+      value: {
+        name: "this is ur clients name",
+        time: finalTime
+      }
+    })
+
+    gtag.event({
       action: "second event",
       event_category: "this ons is just random",
       event_label: "random label",
