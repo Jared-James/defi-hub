@@ -24,7 +24,6 @@ function MyApp({ Component, pageProps }) {
             gtag('js', new Date());
             gtag('config', 'G-K7FVL440HM', {
               page_path: window.location.pathname,
-              'user_id': 'USER_ID',
             });
           `
           }}
