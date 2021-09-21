@@ -24,6 +24,9 @@ function MyApp({ Component, pageProps }) {
             gtag('js', new Date());
             gtag('config', 'G-K7FVL440HM', {
               page_path: window.location.pathname,
+              'custom_map': {
+                'dimensionX': 'clientId'
+              }
             });
           `
           }}
