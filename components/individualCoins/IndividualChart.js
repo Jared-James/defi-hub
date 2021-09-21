@@ -72,25 +72,16 @@ const IndividualChart = ({ coin }) => {
 
     console.log(finalTime)
 
-    gtag.event({
-      action: "first event",
-      event_category: "this one is time",
-      event_label: "time tabel",
-      value: {
-        name: "this is ur clients name",
-        time: finalTime
-      }
-    })
+    let value = {
+      name: "this is ur client",
+      time: finalTime
+    }
 
     gtag.event({
       action: "first event",
       event_category: "this one is time",
       event_label: "time tabel",
-      method: "new data here",
-      value: {
-        name: "this is ur clients name",
-        time: finalTime
-      }
+      value: JSON.stringify(value)
     })
 
     gtag.event({
