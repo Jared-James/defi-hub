@@ -13,7 +13,6 @@ export const event = ({ action, category, label, value, USER_ID }) => {
 }
 
 export const config = ({ USER_ID }) => {
-  q
   if (typeof window !== "undefined") {
     window.gtag("config", USER_ID, {
       user_id: USER_ID
