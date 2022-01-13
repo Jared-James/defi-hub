@@ -1,5 +1,7 @@
-## DeFi-Hub
-https://jared-crypto.netlify.app/
+
+# DeFi-Hub
+
+### Live Site: https://jared-crypto.netlify.app/
 
 #### Version: 1.0.0
 - I wanted to build anything in nextJS that pulls in an API and renders the content.
