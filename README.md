@@ -24,7 +24,7 @@
 #### Version 1.0.6
 - I added the ability to sort for all categories. Name | Symbol | 24H Change & Last Price
 
-#### Version 1.0.6
+#### Version 1.0.7
  - COMMING SOON; WORK IN PROGRESS
 
 ---
